@@ -15,6 +15,9 @@ import tr.edu.deu.ceng.coffie.entity.cart.CoffieCart;
 import tr.edu.deu.ceng.coffie.entity.cart.StudentCart;
 import tr.edu.deu.ceng.coffie.entity.item.CountableItem;
 import tr.edu.deu.ceng.coffie.entity.item.Item;
+import tr.edu.deu.ceng.coffie.entity.item.UnCountableItem;
+import tr.edu.deu.ceng.coffie.entity.recipe.Recipe;
+import tr.edu.deu.ceng.coffie.entity.recipe.SingleItemRecipe;
 import tr.edu.deu.ceng.coffie.entity.table.InnerTable;
 import tr.edu.deu.ceng.coffie.entity.table.OutTable;
 import tr.edu.deu.ceng.coffie.entity.table.Table;
@@ -25,6 +28,7 @@ public class Memory {
 	private List<CoffieCart> carts;
 	private List<Customer> customers;
 	private List<Item> items;
+	private List<Recipe> recipes;
 	private Loginnable activeLogin;
 
 	
@@ -38,18 +42,44 @@ public class Memory {
 		loadCartAndCustomerData();
 		items = new ArrayList<>();
 		loadItemDatas();
+		this.recipes = new ArrayList<>();
+		loadRecipes();
 	}
 	
 
 
 
 
+	private void loadRecipes() {
+		Random rnd = new Random();
+		for(int i=0;i<40;i++) {
+			Recipe rc = new SingleItemRecipe();
+			rc.setId(i);
+			rc.setName("Recipe "+i);
+			rc.addItem(items.get(0), rnd.nextInt(1000));
+			recipes.add(rc);
+		}
+	}
+
+
+
+
+
 	private void loadItemDatas() {
 		Random rnd = new Random();
-		for(int i=0;i<100;i++) {
+		for(int i=0;i<50;i++) {
 			Item item = new CountableItem();
 			item.setId(i);
 			item.setName("Store Item "+i);
+			item.setAmount(rnd.nextInt(100000));
+			item.setPrice(BigDecimal.valueOf(rnd.nextInt(1000)));
+			item.setFroozeOnReady(false);
+			items.add(item);
+		}
+		for(int i=0;i<50;i++) {
+			Item item = new UnCountableItem();
+			item.setId(i);
+			item.setName("UnStore Item "+i);
 			item.setAmount(rnd.nextInt(100000));
 			item.setPrice(BigDecimal.valueOf(rnd.nextInt(1000)));
 			item.setFroozeOnReady(false);
@@ -179,6 +209,22 @@ public class Memory {
 
 	public void setItems(List<Item> items) {
 		this.items = items;
+	}
+
+
+
+
+
+	public List<Recipe> getRecipes() {
+		return recipes;
+	}
+
+
+
+
+
+	public void setRecipes(List<Recipe> recipes) {
+		this.recipes = recipes;
 	}
 
 

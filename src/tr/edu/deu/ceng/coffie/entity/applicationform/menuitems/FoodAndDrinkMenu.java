@@ -1,4 +1,4 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.menuitems;
 
 import java.awt.EventQueue;
 import java.io.IOException;

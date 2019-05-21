@@ -1,4 +1,4 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.recipe;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -7,6 +7,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -23,6 +25,15 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
+import javax.swing.table.DefaultTableModel;
+
+import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
+import tr.edu.deu.ceng.coffie.entity.item.CountableItem;
+import tr.edu.deu.ceng.coffie.entity.item.Item;
+import tr.edu.deu.ceng.coffie.entity.recipe.MultiItemRecipe;
+import tr.edu.deu.ceng.coffie.entity.recipe.Recipe;
+import tr.edu.deu.ceng.coffie.entity.recipe.SingleItemRecipe;
+
 import javax.swing.JTextArea;
 
 public class BRecipe extends JPanel {
@@ -36,7 +47,9 @@ public class BRecipe extends JPanel {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
-
+	private JTable table_1;
+	private Recipe recipe;
+	
 
 	/**
 	 * Create the panel.
@@ -66,12 +79,11 @@ public class BRecipe extends JPanel {
 		setLayout(null);
 		
 		String[] columnNames = { "Item Id", "Item Name", "Total Cost"};
-		Object[][] data = {
-				{ new Integer(1), "Menemen", "9,25"},
-				{ new Integer(2), "Omlet", "8,75"},
-				{ new Integer(3), "Nargile", "5,50"}		
-		};
-		table = new JTable(data, columnNames);
+		DefaultTableModel dtm2 = new DefaultTableModel(0, 0);
+		dtm2.setColumnIdentifiers(columnNames);
+		
+		table = new JTable();
+		table.setModel(dtm2);
 	    table.setPreferredScrollableViewportSize(new Dimension(200, 70));
 	    table.setBackground(Color.DARK_GRAY);
 		table.setForeground(Color.WHITE);
@@ -175,6 +187,12 @@ public class BRecipe extends JPanel {
 		panel.setBackground(Color.DARK_GRAY);
 		panel.setForeground(Color.WHITE);
 		add(panel);
+		String[] columnNames1 = { "Item","Amount"};
+		DefaultTableModel dtm = new DefaultTableModel(0, 0);
+		dtm.setColumnIdentifiers(columnNames1);
+		table_1 = new JTable();
+		table_1.setModel(dtm);
+		panel.add(table_1);
 		
 		JButton btnNewButton_1 = new JButton("Create Recipe");
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
@@ -378,6 +396,123 @@ public class BRecipe extends JPanel {
 		textArea_1.setBackground(Color.DARK_GRAY);
 		add(textArea_1);
 
+		List<Recipe> recipes = Memory.getMemory().getRecipes();
+		for (Iterator iterator = recipes.iterator(); iterator.hasNext();) {
+			Recipe recipe2 = (Recipe) iterator.next();
+			dtm2.addRow(new Object[] {
+					recipe2.getId(),recipe2.getName(),recipe2.getCost()
+			});
+		}
 		
+		List<Item> items = Memory.getMemory().getItems();
+		for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+			Item item = (Item) iterator.next();
+			if(item instanceof CountableItem) {
+				comboBox.addItem(item);
+			}else {
+				comboBox_1.addItem(item);
+			}
+		}
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(recipe == null) {
+					recipe = new SingleItemRecipe();
+				}
+				if(recipe instanceof SingleItemRecipe) {
+					if(dtm.getRowCount() == 1) {
+						MultiItemRecipe mt = new MultiItemRecipe();
+						mt.getItems().add(((SingleItemRecipe) recipe).getItem());
+						recipe = mt;
+					}
+				}
+				
+				int co=0,uco=0;
+				try {
+				co = Integer.parseInt(textField_1.getText());
+				}catch(NumberFormatException e12) {
+					
+				}
+				try {
+					uco = Integer.parseInt(textField_2.getText());
+				}catch(NumberFormatException e123) {}
+				
+				if(co != 0) {
+					dtm.addRow(new Object[]{
+							comboBox.getSelectedItem(),co
+					});
+					textField_1.setText("");
+					recipe.addItem((Item) comboBox.getSelectedItem(),co);
+				}
+				if(uco != 0) {
+					dtm.addRow(new Object[]{
+							comboBox_1.getSelectedItem(),uco
+					});
+					textField_2.setText("");
+					if(recipe instanceof SingleItemRecipe) {
+						if(dtm.getRowCount() == 1) {
+							MultiItemRecipe mt = new MultiItemRecipe();
+							recipe = mt;
+							mt.getItems().add(((SingleItemRecipe) recipe).getItem());
+						}
+					}
+					recipe.addItem((Item) comboBox.getSelectedItem(),uco);
+				}
+			}
+		});
+		
+		btnNewButton_2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int index = table_1.getSelectedRow();
+				if(index >= 0 ) {
+					dtm.removeRow(index);
+					if(recipe instanceof SingleItemRecipe) {
+						((SingleItemRecipe) recipe).setItem(null);
+					}else if(recipe instanceof MultiItemRecipe) {
+						((MultiItemRecipe) recipe).getItems().remove(index);
+						((MultiItemRecipe) recipe).getAmount().remove(index);
+					}
+				}
+			}
+		});
+		
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				recipe.setName(textField.getText());
+				recipe.setDetail(textArea.getText());
+				Memory.getMemory().getRecipes().add(recipe);
+				
+				if (dtm.getRowCount() > 0) {
+				    for (int i = dtm2.getRowCount() - 1; i > -1; i--) {
+				        dtm2.removeRow(i);
+				    }
+				}
+				List<Recipe> recipes = Memory.getMemory().getRecipes();
+				for (Iterator iterator = recipes.iterator(); iterator.hasNext();) {
+					Recipe recipe2 = (Recipe) iterator.next();
+					dtm2.addRow(new Object[] {
+							recipe2.getId(),recipe2.getName(),recipe2.getCost()
+					});
+				}
+				
+			}
+		});
+		
+		btnNewButton_3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id = Integer.parseInt(textField_4.getText());
+				Recipe rc = Memory.getMemory().getRecipes().get(id);
+				if(rc != null) {
+					textArea_1.setText(rc.getDetail());
+				}
+			}
+		});
 	}
 }

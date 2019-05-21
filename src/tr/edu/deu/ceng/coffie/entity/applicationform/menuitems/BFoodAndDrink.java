@@ -1,4 +1,4 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.menuitems;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -62,11 +62,11 @@ public class BFoodAndDrink extends JPanel {
 		String[] columnNames2 = { "Item Number", "Item Name","Price"};
 		String[] columnNames3 = {"Item number","Item Name","Price"};
 		Object[][] combined = {
-				{ new Integer(1), "Ekonomik Menu","4,90 TL","Maxi Sandwich","Ice Tea","Kýzartma Tabaðý",""},
-				{ new Integer(2), "Hamburger","3,50TL","DoubleCheeseBurger","Patetes Kýzartmasý","Kola","Kazandibi"},
+				{ new Integer(1), "Ekonomik Menu","4,90 TL","Maxi Sandwich","Ice Tea","Kï¿½zartma Tabaï¿½ï¿½",""},
+				{ new Integer(2), "Hamburger","3,50TL","DoubleCheeseBurger","Patetes Kï¿½zartmasï¿½","Kola","Kazandibi"},
 				{ new Integer(3), "Patso Menu","2.50TL","Patso Sandwich","Kola","Kazandibi",""},
-				{ new Integer(4), "Nargile Menu","7TL","Nargile","B.Çay","Patates Kýzartmasý",""},
-				{ new Integer(5), "Nargile Menu2","8TL","Nargile","Kola","Kýzartma Tabaðý",""}
+				{ new Integer(4), "Nargile Menu","7TL","Nargile","B.ï¿½ay","Patates Kï¿½zartmasï¿½",""},
+				{ new Integer(5), "Nargile Menu2","8TL","Nargile","Kola","Kï¿½zartma Tabaï¿½ï¿½",""}
 				
 		};
 		Object[][] combined2 = {
@@ -77,7 +77,7 @@ public class BFoodAndDrink extends JPanel {
 		};
 		Object[][] combined3 = {
 				{ new Integer(1), "Ekonomik Menu","4,90 TL"},
-				{ new Integer(2), "Öðrenci Menu","4,20 TL"},
+				{ new Integer(2), "ï¿½ï¿½renci Menu","4,20 TL"},
 		};
 		
 		this.setBounds(0, 0, 1280, 720);

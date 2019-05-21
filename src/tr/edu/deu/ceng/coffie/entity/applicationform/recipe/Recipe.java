@@ -1,4 +1,4 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.recipe;
 
 import java.awt.Color;
 import java.awt.EventQueue;
