@@ -487,17 +487,18 @@ public class BCart extends JPanel {
 					    }
 					}
 					
+					int i=0;
 					for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
 						CoffieCart coffieCart = (CoffieCart) iterator.next();
-				        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+				        dtm.addRow(new Object[] { i++, coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
 				                coffieCart.getCustomer().getName() });
 					}
 					
 					java.util.List<Customer> customeres = Memory.getMemory().getCustomers();
-					
+					i=0;
 					for (Iterator iterator = customeres.iterator(); iterator.hasNext();) {
 						customer = (Customer) iterator.next();
-						dtm2.addRow(new Object[] { customer.getId(),customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
+						dtm2.addRow(new Object[] {i++,customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
 					}
 				}
 			}
@@ -537,17 +538,18 @@ public class BCart extends JPanel {
 							    }
 							}
 							
+							int i=0;
 							for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
 								CoffieCart coffieCart = (CoffieCart) iterator.next();
-						        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+						        dtm.addRow(new Object[] { i++, coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
 						                coffieCart.getCustomer().getName() });
 							}
 							
 							java.util.List<Customer> customeres = Memory.getMemory().getCustomers();
-							
+							i=0;
 							for (Iterator iterator = customeres.iterator(); iterator.hasNext();) {
 								customer = (Customer) iterator.next();
-								dtm2.addRow(new Object[] { customer.getId(),customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
+								dtm2.addRow(new Object[] { i++,customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
 							}
 						}
 					}
@@ -562,14 +564,16 @@ public class BCart extends JPanel {
 				Customer customer = Memory.getMemory().getCustomers().get(id);
 				if(customer != null) {
 					customer.getCart().setBalance(customer.getCart().getBalance().add(BigDecimal.valueOf(amount)));
+					
 					if (dtm.getRowCount() > 0) {
 					    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
 					        dtm.removeRow(i);
 					    }
 					}
+					int i =0;
 					for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
 						CoffieCart coffieCart = (CoffieCart) iterator.next();
-				        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+				        dtm.addRow(new Object[] { i++, coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
 				                coffieCart.getCustomer().getName() });
 					}
 					
@@ -590,9 +594,10 @@ public class BCart extends JPanel {
 					        dtm.removeRow(i);
 					    }
 					}
+					int i=0;
 					for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
 						CoffieCart coffieCart = (CoffieCart) iterator.next();
-				        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+				        dtm.addRow(new Object[] { i++, coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
 				                coffieCart.getCustomer().getName() });
 					}
 					
