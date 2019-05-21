@@ -40,6 +40,9 @@ public class BFoodAndDrink extends JPanel {
 	private JTextField textField_9;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
 
 	/**
 	 * Create the panel.
@@ -183,23 +186,23 @@ public class BFoodAndDrink extends JPanel {
 			}
 		});
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton.setBounds(93, 97, 89, 22);
+		btnNewButton.setBounds(100, 153, 89, 22);
 		add(btnNewButton);
 		
 		JLabel lblNewLabel_6 = new JLabel("Complex Item");
 		lblNewLabel_6.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		lblNewLabel_6.setBounds(0, 130, 169, 23);
+		lblNewLabel_6.setBounds(0, 186, 169, 23);
 		lblNewLabel_6.setForeground(new Color(82, 190, 230));
 		add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("Item ID :");
 		lblNewLabel_7.setForeground(Color.ORANGE);
 		lblNewLabel_7.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_7.setBounds(0, 160, 73, 14);
+		lblNewLabel_7.setBounds(0, 220, 73, 14);
 		add(lblNewLabel_7);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(83, 157, 86, 20);
+		textField_2.setBounds(93, 217, 86, 20);
 		textField_2.setBackground(Color.DARK_GRAY);
 		textField_2.setForeground(Color.WHITE);
 		textField_2.setDisabledTextColor(Color.WHITE);
@@ -209,11 +212,11 @@ public class BFoodAndDrink extends JPanel {
 		JLabel lblNewLabel_8 = new JLabel("Price :");
 		lblNewLabel_8.setForeground(Color.ORANGE);
 		lblNewLabel_8.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_8.setBounds(0, 185, 73, 14);
+		lblNewLabel_8.setBounds(0, 245, 73, 14);
 		add(lblNewLabel_8);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(83, 182, 86, 20);
+		textField_3.setBounds(93, 242, 86, 20);
 		textField_3.setBackground(Color.DARK_GRAY);
 		textField_3.setForeground(Color.WHITE);
 		textField_3.setDisabledTextColor(Color.WHITE);
@@ -223,11 +226,11 @@ public class BFoodAndDrink extends JPanel {
 		JLabel lblNewLabel_9 = new JLabel("Container1:");
 		lblNewLabel_9.setForeground(Color.ORANGE);
 		lblNewLabel_9.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
-		lblNewLabel_9.setBounds(0, 210, 73, 14);
+		lblNewLabel_9.setBounds(0, 296, 73, 14);
 		add(lblNewLabel_9);
 		
 		textField_4 = new JTextField();
-		textField_4.setBounds(83, 207, 86, 20);
+		textField_4.setBounds(93, 293, 86, 20);
 		textField_4.setBackground(Color.DARK_GRAY);
 		textField_4.setForeground(Color.WHITE);
 		textField_4.setDisabledTextColor(Color.WHITE);
@@ -237,11 +240,11 @@ public class BFoodAndDrink extends JPanel {
 		JLabel lblNewLabel_10 = new JLabel("Container2:");
 		lblNewLabel_10.setForeground(Color.ORANGE);
 		lblNewLabel_10.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
-		lblNewLabel_10.setBounds(0, 235, 73, 14);
+		lblNewLabel_10.setBounds(0, 321, 73, 14);
 		add(lblNewLabel_10);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(83, 232, 86, 20);
+		textField_5.setBounds(93, 318, 86, 20);
 		textField_5.setBackground(Color.DARK_GRAY);
 		textField_5.setForeground(Color.WHITE);
 		textField_5.setDisabledTextColor(Color.WHITE);
@@ -251,11 +254,11 @@ public class BFoodAndDrink extends JPanel {
 		JLabel lblNewLabel_11 = new JLabel("Container3:");
 		lblNewLabel_11.setForeground(Color.ORANGE);
 		lblNewLabel_11.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
-		lblNewLabel_11.setBounds(0, 260, 73, 14);
+		lblNewLabel_11.setBounds(0, 346, 73, 14);
 		add(lblNewLabel_11);
 		
 		textField_6 = new JTextField();
-		textField_6.setBounds(83, 257, 86, 20);
+		textField_6.setBounds(93, 343, 86, 20);
 		textField_6.setBackground(Color.DARK_GRAY);
 		textField_6.setForeground(Color.WHITE);
 		textField_6.setDisabledTextColor(Color.WHITE);
@@ -265,11 +268,11 @@ public class BFoodAndDrink extends JPanel {
 		JLabel lblNewLabel_12 = new JLabel("Container4:");
 		lblNewLabel_12.setForeground(Color.ORANGE);
 		lblNewLabel_12.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
-		lblNewLabel_12.setBounds(0, 286, 73, 14);
+		lblNewLabel_12.setBounds(0, 371, 73, 14);
 		add(lblNewLabel_12);
 		
 		textField_7 = new JTextField();
-		textField_7.setBounds(83, 283, 86, 20);
+		textField_7.setBounds(93, 368, 86, 20);
 		textField_7.setBackground(Color.DARK_GRAY);
 		textField_7.setForeground(Color.WHITE);
 		textField_7.setDisabledTextColor(Color.WHITE);
@@ -282,31 +285,31 @@ public class BFoodAndDrink extends JPanel {
 			}
 		});
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton_1.setBounds(93, 311, 96, 23);
+		btnNewButton_1.setBounds(93, 424, 96, 23);
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
 		btnNewButton_1.setForeground(Color.WHITE);
 		add(btnNewButton_1);
 		
 		JLabel lblNewLabel_13 = new JLabel("Promoted Item");
 		lblNewLabel_13.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		lblNewLabel_13.setBounds(0, 345, 169, 14);
+		lblNewLabel_13.setBounds(224, 184, 169, 14);
 		lblNewLabel_13.setForeground(new Color(82, 190, 230));
 		add(lblNewLabel_13);
 		
 		JLabel lblNewLabel_14 = new JLabel("Item ID :");
 		lblNewLabel_14.setForeground(Color.ORANGE);
 		lblNewLabel_14.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_14.setBounds(0, 370, 73, 14);
+		lblNewLabel_14.setBounds(224, 210, 73, 14);
 		add(lblNewLabel_14);
 		
 		JLabel lblNewLabel_15 = new JLabel("Price :");
 		lblNewLabel_15.setForeground(Color.ORANGE);
 		lblNewLabel_15.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_15.setBounds(0, 396, 73, 14);
+		lblNewLabel_15.setBounds(224, 260, 73, 14);
 		add(lblNewLabel_15);
 		
 		textField_8 = new JTextField();
-		textField_8.setBounds(83, 367, 86, 20);
+		textField_8.setBounds(307, 207, 86, 20);
 		textField_8.setBackground(Color.DARK_GRAY);
 		textField_8.setForeground(Color.WHITE);
 		textField_8.setDisabledTextColor(Color.WHITE);
@@ -314,7 +317,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_8.setColumns(10);
 		
 		textField_9 = new JTextField();
-		textField_9.setBounds(83, 393, 86, 20);
+		textField_9.setBounds(307, 257, 86, 20);
 		textField_9.setBackground(Color.DARK_GRAY);
 		textField_9.setForeground(Color.WHITE);
 		textField_9.setDisabledTextColor(Color.WHITE);
@@ -327,34 +330,34 @@ public class BFoodAndDrink extends JPanel {
 			}
 		});
 		btnNewButton_2.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton_2.setBounds(93, 425, 89, 23);
+		btnNewButton_2.setBounds(323, 287, 89, 23);
 		btnNewButton_2.setBackground(Color.DARK_GRAY);
 		btnNewButton_2.setForeground(Color.WHITE);
 		add(btnNewButton_2);
 		
 		JLabel lblNewLabel_16 = new JLabel("Remove Item");
 		lblNewLabel_16.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		lblNewLabel_16.setBounds(0, 459, 141, 23);
+		lblNewLabel_16.setBounds(224, 15, 141, 23);
 		lblNewLabel_16.setForeground(new Color(82, 190, 230));
 		add(lblNewLabel_16);
 		
 		JButton btnNewButton_3 = new JButton("Modify");
 		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton_3.setBounds(-12, 97, 95, 22);
+		btnNewButton_3.setBounds(-6, 153, 95, 22);
 		btnNewButton_3.setBackground(Color.DARK_GRAY);
 		btnNewButton_3.setForeground(Color.WHITE);
 		add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Modify");
 		btnNewButton_4.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton_4.setBounds(0, 311, 89, 23);
+		btnNewButton_4.setBounds(0, 424, 89, 23);
 		btnNewButton_4.setBackground(Color.DARK_GRAY);
 		btnNewButton_4.setForeground(Color.WHITE);
 		add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Modify");
 		btnNewButton_5.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton_5.setBounds(-6, 425, 89, 23);
+		btnNewButton_5.setBounds(224, 287, 89, 23);
 		btnNewButton_5.setBackground(Color.DARK_GRAY);
 		btnNewButton_5.setForeground(Color.WHITE);
 		add(btnNewButton_5);
@@ -362,7 +365,7 @@ public class BFoodAndDrink extends JPanel {
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("SingleItem");
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		rdbtnNewRadioButton.setBounds(0, 489, 89, 23);
+		rdbtnNewRadioButton.setBounds(224, 42, 89, 23);
 		rdbtnNewRadioButton.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton);
@@ -370,7 +373,7 @@ public class BFoodAndDrink extends JPanel {
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("ComplexItem");
 		buttonGroup.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		rdbtnNewRadioButton_1.setBounds(91, 489, 103, 23);
+		rdbtnNewRadioButton_1.setBounds(315, 42, 103, 23);
 		rdbtnNewRadioButton_1.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton_1.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_1);
@@ -378,14 +381,14 @@ public class BFoodAndDrink extends JPanel {
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Promoted Item");
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		rdbtnNewRadioButton_2.setBounds(0, 515, 169, 23);
+		rdbtnNewRadioButton_2.setBounds(224, 67, 169, 23);
 		rdbtnNewRadioButton_2.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton_2.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_2);
 		
 		JButton btnNewButton_6 = new JButton("Remove");
 		btnNewButton_6.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton_6.setBounds(93, 576, 96, 23);
+		btnNewButton_6.setBounds(322, 140, 96, 23);
 		btnNewButton_6.setBackground(Color.DARK_GRAY);
 		btnNewButton_6.setForeground(Color.WHITE);
 		add(btnNewButton_6);
@@ -393,16 +396,58 @@ public class BFoodAndDrink extends JPanel {
 		JLabel lblNewLabel_17 = new JLabel("Item ID :");
 		lblNewLabel_17.setForeground(Color.ORANGE);
 		lblNewLabel_17.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_17.setBounds(10, 545, 63, 23);
+		lblNewLabel_17.setBounds(234, 98, 63, 23);
 		add(lblNewLabel_17);
 		
 		textField_10 = new JTextField();
-		textField_10.setBounds(83, 545, 86, 20);
+		textField_10.setBounds(307, 99, 86, 20);
 		textField_10.setBackground(Color.DARK_GRAY);
 		textField_10.setForeground(Color.WHITE);
 		textField_10.setDisabledTextColor(Color.WHITE);
 		add(textField_10);
 		textField_10.setColumns(10);
+		
+		JLabel lblItemName = new JLabel("Item Name:");
+		lblItemName.setForeground(Color.ORANGE);
+		lblItemName.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
+		lblItemName.setBounds(224, 235, 73, 14);
+		add(lblItemName);
+		
+		textField_11 = new JTextField();
+		textField_11.setBounds(307, 232, 86, 20);
+		textField_11.setBackground(Color.DARK_GRAY);
+		textField_11.setForeground(Color.WHITE);
+		textField_11.setDisabledTextColor(Color.WHITE);
+		add(textField_11);
+		textField_11.setColumns(10);
+		
+		JLabel lblItemName_1 = new JLabel("Item Name");
+		lblItemName_1.setForeground(Color.ORANGE);
+		lblItemName_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
+		lblItemName_1.setBounds(0, 270, 73, 14);
+		add(lblItemName_1);
+		
+		textField_12 = new JTextField();
+		textField_12.setBounds(93, 267, 86, 20);
+		textField_12.setBackground(Color.DARK_GRAY);
+		textField_12.setForeground(Color.WHITE);
+		textField_12.setDisabledTextColor(Color.WHITE);
+		add(textField_12);
+		textField_12.setColumns(10);
+		
+		JLabel lblItemName_2 = new JLabel("Item Name");
+		lblItemName_2.setForeground(Color.ORANGE);
+		lblItemName_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
+		lblItemName_2.setBounds(0, 96, 73, 14);
+		add(lblItemName_2);
+		
+		textField_13 = new JTextField();
+		textField_13.setBounds(83, 93, 86, 20);
+		textField_13.setBackground(Color.DARK_GRAY);
+		textField_13.setForeground(Color.WHITE);
+		textField_13.setDisabledTextColor(Color.WHITE);
+		add(textField_13);
+		textField_13.setColumns(10);
 		
 	}
 }
