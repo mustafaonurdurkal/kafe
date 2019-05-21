@@ -90,7 +90,8 @@ public class Bmainpanel extends JPanel {
 		JButton btnNewButton_1 = new JButton("CARDS&CUSTOMER");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Cart.main(null);
+				Cart window = new Cart();
+				
 				parent.setVisible(false);
 
 			}
@@ -123,8 +124,8 @@ public class Bmainpanel extends JPanel {
 		JButton btnNewButton_4 = new JButton("Table Configuration");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TableConfiguration.main(null);
 				parent.setVisible(false);
+				TableConfiguration.main(null);
 			}
 		});
 		btnNewButton_4.setBorder(null);

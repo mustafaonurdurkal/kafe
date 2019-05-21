@@ -9,6 +9,7 @@ public class Cart {
 
 	private JFrame frame;
 
+	
 	/**
 	 * Launch the application.
 	 */
@@ -40,6 +41,9 @@ public class Cart {
 		frame.setBounds(0, 0, 1280, 720);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setUndecorated(true);
+
+		frame.setVisible(true);
 		BCart cart =null;
 		try {
 			cart=new BCart("resources/background2.jpg");
@@ -47,7 +51,6 @@ public class Cart {
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		frame.setUndecorated(true);
 		cart.SuleymanDemirel();
 	}
 
