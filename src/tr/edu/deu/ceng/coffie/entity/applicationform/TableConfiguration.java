@@ -32,6 +32,12 @@ public class TableConfiguration {
 		initialize();
 	}
 
+	private JFrame parent;
+	public TableConfiguration(JFrame parent) {
+		this.parent = parent;
+		initialize();
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -40,15 +46,17 @@ public class TableConfiguration {
 		frame.setBounds(0, 0, 1280, 720);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setUndecorated(true);
+
+		frame.setVisible(true);
+
 		Btableconfpanel tableconf =null;
 		try {
-			tableconf=new Btableconfpanel("resources/background2.jpg");
+			tableconf=new Btableconfpanel("resources/background2.jpg",parent,frame);
 			frame.getContentPane().add(tableconf);
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		frame.setUndecorated(true);
-		    tableconf.hasansas();
 	}
 
 }

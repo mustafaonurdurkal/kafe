@@ -23,6 +23,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.table.DefaultTableModel;
@@ -67,6 +68,14 @@ public class BRecipe extends JPanel {
 
 	public BRecipe() {
 		hakantasiyan();
+	}
+	private JFrame parent,frame;
+	public BRecipe(String string, JFrame parent, JFrame frame) throws IOException {
+		this(string);
+		this.parent = parent;
+		this.frame = frame;
+		hakantasiyan();
+
 	}
 
 	public void hakantasiyan() {
@@ -411,6 +420,7 @@ public class BRecipe extends JPanel {
 		add(textArea);
 
 		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setForeground(Color.WHITE);
 		textArea_1.setBounds(507, 155, 207, 334);
 		textArea_1.setCaretColor(Color.RED);
 		textArea_1.setBackground(Color.DARK_GRAY);
@@ -654,6 +664,16 @@ public class BRecipe extends JPanel {
 					Recipe recipe2 = (Recipe) iterator.next();
 					dtm2.addRow(new Object[] { i++, recipe2.getName(), recipe2.getCost() });
 				}
+			}
+		});
+		
+		btnBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				parent.setVisible(true);
+					
 			}
 		});
 	}

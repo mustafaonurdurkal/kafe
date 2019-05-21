@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -17,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JSpinner;
 
 public class BCheckOut extends JPanel {
@@ -44,6 +47,13 @@ public class BCheckOut extends JPanel {
 	public BCheckOut() {
         checkoutmethod();
 	}
+	private JFrame parent,frame;
+	public BCheckOut(String string, JFrame parent, JFrame frame) throws IOException {
+		this(string);
+		this.parent =parent;
+		this.frame = frame;
+	}
+
 	public void checkoutmethod() {
 		this.setBounds(0, 0, 1280, 720);
 		setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -193,6 +203,16 @@ public class BCheckOut extends JPanel {
 		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
 		btnBack.setBounds(1074, 634, 160, 38);
 		add(btnBack);
+		
+		btnBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				parent.setVisible(true);
+					
+			}
+		});
 		
 	}
 }

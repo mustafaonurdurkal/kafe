@@ -22,6 +22,8 @@ import java.awt.GridLayout;
 import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
@@ -53,6 +55,14 @@ public class Btableconfpanel extends JPanel {
 	}
 
 	public Btableconfpanel() {
+		hasansas();
+	}
+
+	private JFrame parent,frame;
+	public Btableconfpanel(String string, JFrame parent, JFrame frame) throws IOException {
+		this(string);
+		this.parent = parent;
+		this.frame =  frame;
 		hasansas();
 	}
 
@@ -213,5 +223,14 @@ public class Btableconfpanel extends JPanel {
 		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
 		btnBack.setBounds(853, 657, 160, 38);
 		add(btnBack);
+		btnBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				parent.setVisible(true);
+					
+			}
+		});
 	}
 }

@@ -13,8 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+
+import tr.edu.deu.ceng.coffie.entity.applicationform.menuitems.FoodAndDrinkMenu;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -49,6 +54,16 @@ public class BDEFTERLER extends JPanel {
 	public BDEFTERLER() {
        helaldogukan();
 	}
+	private JFrame parent,frame;
+	
+
+	public BDEFTERLER(String string, JFrame parent, JFrame frame2) throws IOException {
+		this(string);
+		this.parent = parent;   
+		this.frame = frame2;
+		helaldogukan();
+	}
+
 	public void helaldogukan() {
 		this.setBounds(0, 0, 1280, 720);
 		setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -57,11 +72,11 @@ public class BDEFTERLER extends JPanel {
 		
 		String[] columnNames = { "Menu Number", "Menu Name","Type"};
 		Object[][] data = {
-				{ new Integer(1), "YILBAÞI", "FooD"},
+				{ new Integer(1), "YILBAï¿½I", "FooD"},
 				{ new Integer(2), "DONDURMALAR", "Food"},
-				{ new Integer(3), "Sýcak Ýçecekler", "Drink"},
-				{ new Integer(4), "Soðuk Ýçecekler", "Drink"},
-				{ new Integer(5), "Alkollu Ýçecekler", "Drink"},
+				{ new Integer(3), "Sï¿½cak ï¿½ï¿½ecekler", "Drink"},
+				{ new Integer(4), "Soï¿½uk ï¿½ï¿½ecekler", "Drink"},
+				{ new Integer(5), "Alkollu ï¿½ï¿½ecekler", "Drink"},
 				{ new Integer(6), "Combo Menuler", "Food"}
 
 				
@@ -228,7 +243,10 @@ public class BDEFTERLER extends JPanel {
 		JButton btnNewButton_2 = new JButton("L&M");
 		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
+				FoodAndDrinkMenu fd = new FoodAndDrinkMenu(frame);
+				parent.setVisible(false);
+
 			}
 		});
 		btnNewButton_2.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
@@ -244,5 +262,15 @@ public class BDEFTERLER extends JPanel {
 		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
 		btnBack.setBounds(853, 657, 160, 38);
 		add(btnBack);
+		
+		btnBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				parent.setVisible(true);
+					
+			}
+		});
 	}
 }

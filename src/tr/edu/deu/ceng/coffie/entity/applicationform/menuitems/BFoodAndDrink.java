@@ -13,6 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+
+import tr.edu.deu.ceng.coffie.entity.applicationform.DEFTERLER;
+import tr.edu.deu.ceng.coffie.entity.applicationform.recipe.Recipe;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -22,6 +26,7 @@ import javax.swing.ButtonGroup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 
 public class BFoodAndDrink extends JPanel {
 
@@ -61,6 +66,13 @@ public class BFoodAndDrink extends JPanel {
 	public BFoodAndDrink() {
         kapkankagan();
 	}
+	private JFrame parent,frame;
+	public BFoodAndDrink(String string, JFrame parent, JFrame frame) throws IOException {
+		this(string);
+		this.parent = parent;
+		this.frame = frame;
+	}
+
 	public void kapkankagan() {
 		String[] columnNames = {  "Item Number", "Item Name","Price","ITEM 1","ITEM 2","ITEM 3","ITEM 4"};
 		String[] columnNames2 = { "Item Number", "Item Name","Price"};
@@ -488,5 +500,21 @@ public class BFoodAndDrink extends JPanel {
 		btnNewButton_7.setBounds(0, 496, 189, 56);
 		add(btnNewButton_7);
 		
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Recipe rc = new Recipe(frame);
+				parent.setVisible(false);
+
+			}
+		});
+		btnBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				parent.setVisible(true);
+					
+			}
+		});
 	}
 }

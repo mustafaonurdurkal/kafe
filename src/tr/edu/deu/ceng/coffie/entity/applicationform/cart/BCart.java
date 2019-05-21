@@ -36,6 +36,7 @@ import javax.swing.JSpinner;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 public class BCart extends JPanel {
 
@@ -67,6 +68,18 @@ public class BCart extends JPanel {
 	public BCart() {
 		SuleymanDemirel();
 	}
+	private JFrame parent,parent2;
+	public BCart(String string, JFrame parent) throws IOException {
+		this(string);
+		this.parent=parent;
+	}
+
+	
+	public BCart(String string, JFrame parent, JFrame frame) throws IOException {
+		this(string,parent);
+		this.parent2 = frame;
+	}
+
 	public void SuleymanDemirel() {
 		this.setBounds(0, 0, 1280, 720);
 		setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -415,6 +428,12 @@ public class BCart extends JPanel {
 		add(textField_6);
 		textField_6.setColumns(10);
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				parent2.setVisible(false);
+				parent.setVisible(true);
+			}
+		});
 		btnBack.setFocusable(false);
 		btnBack.setForeground(Color.RED);
 		btnBack.setBackground(Color.DARK_GRAY);

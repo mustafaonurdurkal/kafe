@@ -36,6 +36,12 @@ public class Recipe {
 		initialize();
 	}
 
+	private JFrame parent;
+	public Recipe(JFrame frame2) {
+		parent = frame2;
+		initialize();
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -44,15 +50,15 @@ public class Recipe {
 		frame.setBounds(0, 0, 1280, 720);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setUndecorated(true);
+		frame.setVisible(true);
 		BRecipe recipe =null;
 		try {
-			recipe=new BRecipe("resources/background2.jpg");
+			recipe=new BRecipe("resources/background2.jpg",parent,frame);
 			frame.getContentPane().add(recipe);
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		frame.setUndecorated(true);
-		recipe.hakantasiyan();
 	}
 	
 

@@ -26,7 +26,9 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
+import tr.edu.deu.ceng.coffie.entity.applicationform.BDEFTERLER;
 import tr.edu.deu.ceng.coffie.entity.applicationform.CheckOut;
+import tr.edu.deu.ceng.coffie.entity.applicationform.DEFTERLER;
 import tr.edu.deu.ceng.coffie.entity.applicationform.TableConfiguration;
 import tr.edu.deu.ceng.coffie.entity.applicationform.cart.Cart;
 import tr.edu.deu.ceng.coffie.entity.applicationform.menuitems.BFoodAndDrink;
@@ -76,7 +78,7 @@ public class Bmainpanel extends JPanel {
 		JButton btnNewButton = new JButton("CHECK&ORDER");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				CheckOut.main(null);
+				CheckOut check = new CheckOut(parent);
 				parent.setVisible(false);
 			}
 		});
@@ -91,7 +93,7 @@ public class Bmainpanel extends JPanel {
 		JButton btnNewButton_1 = new JButton("CARDS&CUSTOMER");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Cart window = new Cart();
+				Cart window = new Cart(parent);
 				
 				parent.setVisible(false);
 
@@ -109,7 +111,7 @@ public class Bmainpanel extends JPanel {
 		JButton btnNewButton_3 = new JButton("MENU CONFIGURATION");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FoodAndDrinkMenu.main(null);
+				DEFTERLER d = new DEFTERLER(parent);
 				parent.setVisible(false);
 
 			}
@@ -125,8 +127,9 @@ public class Bmainpanel extends JPanel {
 		JButton btnNewButton_4 = new JButton("Table Configuration");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				TableConfiguration tb = new TableConfiguration(parent);
 				parent.setVisible(false);
-				TableConfiguration.main(null);
+				
 			}
 		});
 		btnNewButton_4.setBorder(null);

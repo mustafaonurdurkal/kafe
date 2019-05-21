@@ -32,6 +32,12 @@ public class FoodAndDrinkMenu {
 		initialize();
 	}
 
+	private JFrame parent;
+	public FoodAndDrinkMenu(JFrame parent) {
+		this.parent = parent;
+		initialize();
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -40,14 +46,15 @@ public class FoodAndDrinkMenu {
 		frame.setBounds(0, 0, 1280, 720);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setUndecorated(true);
+		frame.setVisible(true);
 		BFoodAndDrink foodanddrink =null;
 		try {
-			foodanddrink=new BFoodAndDrink("resources/background2.jpg");
+			foodanddrink=new BFoodAndDrink("resources/background2.jpg",parent,frame);
 			frame.getContentPane().add(foodanddrink);
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		frame.setUndecorated(true);
 		foodanddrink.kapkankagan();
 	}
 

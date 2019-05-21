@@ -33,6 +33,13 @@ public class Cart {
 		initialize();
 	}
 
+	private JFrame parent;
+	public Cart(JFrame parent) {
+		this.parent = parent;
+		initialize();
+
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -46,7 +53,7 @@ public class Cart {
 		frame.setVisible(true);
 		BCart cart =null;
 		try {
-			cart=new BCart("resources/background2.jpg");
+			cart=new BCart("resources/background2.jpg",parent,frame);
 			frame.getContentPane().add(cart);
 		}catch(IOException e) {
 			e.printStackTrace();
