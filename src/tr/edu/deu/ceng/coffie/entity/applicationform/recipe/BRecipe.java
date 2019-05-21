@@ -458,7 +458,7 @@ public class BRecipe extends JPanel {
 							mt.getItems().add(((SingleItemRecipe) recipe).getItem());
 						}
 					}
-					recipe.addItem((Item) comboBox.getSelectedItem(), uco);
+					recipe.addItem((Item) comboBox_1.getSelectedItem(), uco);
 				}
 			}
 		});
