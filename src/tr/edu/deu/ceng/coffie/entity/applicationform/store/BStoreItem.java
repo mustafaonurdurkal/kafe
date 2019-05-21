@@ -1,4 +1,4 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.store;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -6,8 +6,11 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.List;
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Iterator;
 
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
@@ -15,17 +18,24 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
+import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
+import tr.edu.deu.ceng.coffie.entity.item.CountableItem;
+import tr.edu.deu.ceng.coffie.entity.item.Item;
+import tr.edu.deu.ceng.coffie.entity.item.UnCountableItem;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
 
 public class BStoreItem extends JPanel {
 
 	private Image backgroundImage;
 	private JTable table;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
@@ -57,14 +67,10 @@ public class BStoreItem extends JPanel {
 		setLayout(null);
 		
 		String[] columnNames = { "Item Id", "Item Name","Item Type" ,"FroozeOnReady","Price","Remain Amount"};
-		Object[][] data = {
-				{ new Integer(1), "sogan", "Uncountable","No","3,20TL","500"},
-				{ new Integer(2), "egg", "countable","Yes","0,80TL","500"},
-				{ new Integer(3), "cola", "countable","Yes","3,50TL","100"}
-				
-		};
-		
-		table = new JTable(data, columnNames);
+		DefaultTableModel dtm = new DefaultTableModel(0, 0);
+		dtm.setColumnIdentifiers(columnNames);
+		table = new JTable();
+		table.setModel(dtm);
 	    table.setPreferredScrollableViewportSize(new Dimension(200, 70));
 	    table.setBackground(Color.DARK_GRAY);
 		table.setForeground(Color.WHITE);
@@ -101,19 +107,6 @@ public class BStoreItem extends JPanel {
 		textField.setDisabledTextColor(Color.WHITE);
 		add(textField);
 		textField.setColumns(10);
-		
-		JLabel lblNewLabel_2 = new JLabel("FroozeOnReady :");
-		lblNewLabel_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
-		lblNewLabel_2.setBounds(28, 129, 115, 22);
-		add(lblNewLabel_2);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(153, 126, 105, 22);
-		textField_1.setBackground(Color.DARK_GRAY);
-		textField_1.setForeground(Color.WHITE);
-		textField_1.setDisabledTextColor(Color.WHITE);
-		add(textField_1);
-		textField_1.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Modify Item");
 		lblNewLabel_3.setFont(new Font("Bauhaus 93", Font.ITALIC, 25));
@@ -234,7 +227,145 @@ public class BStoreItem extends JPanel {
 		btnNewButton_3.setForeground(Color.WHITE);
 		add(btnNewButton_3);
 		
+		JButton button = new JButton("Add");
+		button.setForeground(Color.WHITE);
+		button.setFont(new Font("Dialog", Font.ITALIC, 15));
+		button.setBackground(Color.DARK_GRAY);
+		button.setBounds(268, 92, 105, 23);
+		add(button);
 		
-	}
+		JRadioButton rdbtnCountable = new JRadioButton("Countable");
+		rdbtnCountable.setBounds(274, 131, 149, 23);
+		add(rdbtnCountable);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Froze On Ready");
+		rdbtnNewRadioButton.setBounds(130, 131, 149, 23);
+		add(rdbtnNewRadioButton);
+		
+		java.util.List<Item> items = Memory.getMemory().getItems();
 
+		for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+			Item item = (Item) iterator.next();
+			dtm.addRow(new Object[] { item.getId(),item.getName(),item.getClass().getSimpleName(),item.isFroozeOnReady(),item.getPrice(),item.getAmount()});
+		}
+		
+		
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Item it = null;
+				if(rdbtnCountable.isSelected()) {
+					it = new CountableItem();
+				}else {
+					it = new UnCountableItem();
+				}
+				it.setId(Memory.getMemory().getItems().size());
+
+				it.setFroozeOnReady(rdbtnNewRadioButton.isSelected());
+				it.setName(textField.getText());
+				it.setPrice(BigDecimal.valueOf(Double.parseDouble(textField_6.getText())));
+				Memory.getMemory().getItems().add(it);
+				if (dtm.getRowCount() > 0) {
+				    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+				        dtm.removeRow(i);
+				    }
+				}
+				java.util.List<Item> items = Memory.getMemory().getItems();
+
+				for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+					Item item = (Item) iterator.next();
+					dtm.addRow(new Object[] { item.getId(),item.getName(),item.getClass().getSimpleName(),item.isFroozeOnReady(),item.getPrice(),item.getAmount()});
+				}
+			}
+		});
+		btnNewButton.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id =Integer.parseInt(textField_2.getText());
+				Item it = Memory.getMemory().getItems().get(id);
+				if(it != null) {
+					it.setAmount(it.getAmount()+Integer.parseInt(textField_3.getText()));
+				}
+				if (dtm.getRowCount() > 0) {
+				    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+				        dtm.removeRow(i);
+				    }
+				}
+				java.util.List<Item> items = Memory.getMemory().getItems();
+
+				for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+					Item item = (Item) iterator.next();
+					dtm.addRow(new Object[] { item.getId(),item.getName(),item.getClass().getSimpleName(),item.isFroozeOnReady(),item.getPrice(),item.getAmount()});
+				}
+			}
+		});
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id =Integer.parseInt(textField_2.getText());
+				Item it = Memory.getMemory().getItems().get(id);
+				if(it != null) {
+					it.setAmount(it.getAmount()-Integer.parseInt(textField_4.getText()));
+				}
+				if (dtm.getRowCount() > 0) {
+				    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+				        dtm.removeRow(i);
+				    }
+				}
+				java.util.List<Item> items = Memory.getMemory().getItems();
+
+				for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+					Item item = (Item) iterator.next();
+					dtm.addRow(new Object[] { item.getId(),item.getName(),item.getClass().getSimpleName(),item.isFroozeOnReady(),item.getPrice(),item.getAmount()});
+				}
+			}
+		});
+		btnNewButton_3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id =Integer.parseInt(textField_2.getText());
+				Item it = Memory.getMemory().getItems().get(id);
+				if(it != null) {
+					it.setPrice(BigDecimal.valueOf(Double.parseDouble(textField_7.getText())));
+				}
+				if (dtm.getRowCount() > 0) {
+				    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+				        dtm.removeRow(i);
+				    }
+				}
+				java.util.List<Item> items = Memory.getMemory().getItems();
+
+				for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+					Item item = (Item) iterator.next();
+					dtm.addRow(new Object[] { item.getId(),item.getName(),item.getClass().getSimpleName(),item.isFroozeOnReady(),item.getPrice(),item.getAmount()});
+				}
+			}
+		});
+		btnNewButton_2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id =Integer.parseInt(textField_2.getText());
+				Item it = Memory.getMemory().getItems().get(id);
+				if(it!=null) {
+					 Memory.getMemory().getItems().remove(id);
+						if (dtm.getRowCount() > 0) {
+						    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+						        dtm.removeRow(i);
+						    }
+						}
+						java.util.List<Item> items = Memory.getMemory().getItems();
+
+						for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+							Item item = (Item) iterator.next();
+							dtm.addRow(new Object[] { item.getId(),item.getName(),item.getClass().getSimpleName(),item.isFroozeOnReady(),item.getPrice(),item.getAmount()});
+						}
+				}
+			}
+		});
+	}
 }

@@ -1,16 +1,20 @@
 package tr.edu.deu.ceng.coffie.db.inmemory;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import tr.edu.deu.ceng.coffie.entity.Customer;
 import tr.edu.deu.ceng.coffie.entity.auth.Loginnable;
 import tr.edu.deu.ceng.coffie.entity.auth.SimpleLoginer;
 import tr.edu.deu.ceng.coffie.entity.cart.CoffieCart;
 import tr.edu.deu.ceng.coffie.entity.cart.StudentCart;
+import tr.edu.deu.ceng.coffie.entity.item.CountableItem;
+import tr.edu.deu.ceng.coffie.entity.item.Item;
 import tr.edu.deu.ceng.coffie.entity.table.InnerTable;
 import tr.edu.deu.ceng.coffie.entity.table.OutTable;
 import tr.edu.deu.ceng.coffie.entity.table.Table;
@@ -20,7 +24,7 @@ public class Memory {
 	private List<Table> tables;
 	private List<CoffieCart> carts;
 	private List<Customer> customers;
-	
+	private List<Item> items;
 	private Loginnable activeLogin;
 
 	
@@ -32,9 +36,27 @@ public class Memory {
 		carts = new ArrayList<>();
 		customers = new ArrayList<>();
 		loadCartAndCustomerData();
-
+		items = new ArrayList<>();
+		loadItemDatas();
 	}
 	
+
+
+
+
+	private void loadItemDatas() {
+		Random rnd = new Random();
+		for(int i=0;i<100;i++) {
+			Item item = new CountableItem();
+			item.setId(i);
+			item.setName("Store Item "+i);
+			item.setAmount(rnd.nextInt(100000));
+			item.setPrice(BigDecimal.valueOf(rnd.nextInt(1000)));
+			item.setFroozeOnReady(false);
+			items.add(item);
+		}
+	}
+
 
 
 
@@ -141,6 +163,22 @@ public class Memory {
 
 	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
+	}
+
+
+
+
+
+	public List<Item> getItems() {
+		return items;
+	}
+
+
+
+
+
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 
 
