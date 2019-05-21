@@ -21,6 +21,7 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class BFoodAndDrink extends JPanel {
 
@@ -344,10 +345,10 @@ public class BFoodAndDrink extends JPanel {
 		lblNewLabel_16.setForeground(new Color(82, 190, 230));
 		add(lblNewLabel_16);
 		
-		JButton btnNewButton_3 = new JButton("Modify");
+		JButton btnNewButton_3 =new JButton("Modify");
 		btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
-		btnNewButton_3.setBounds(-6, 153, 95, 22);
+		btnNewButton_3.setBounds(0, 153, 95, 22);
 		btnNewButton_3.setBackground(Color.DARK_GRAY);
 		btnNewButton_3.setForeground(Color.WHITE);
 		add(btnNewButton_3);
@@ -466,6 +467,26 @@ public class BFoodAndDrink extends JPanel {
 		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
 		btnBack.setBounds(853, 657, 160, 38);
 		add(btnBack);
+		
+		JLabel lblRecipe = new JLabel("Recipe");
+		lblRecipe.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
+		lblRecipe.setForeground(Color.ORANGE);
+		lblRecipe.setBounds(0, 121, 63, 14);
+		add(lblRecipe);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBackground(Color.DARK_GRAY);
+		comboBox.setForeground(Color.WHITE);
+		comboBox.setBounds(83, 118, 86, 20);
+		add(comboBox);
+		
+		JButton btnNewButton_7 = new JButton("Recipes");
+		btnNewButton_7.setFocusable(false);
+		btnNewButton_7.setBackground(Color.DARK_GRAY);
+		btnNewButton_7.setForeground(Color.WHITE);
+		btnNewButton_7.setFont(new Font("Bauhaus 93", Font.ITALIC, 20));
+		btnNewButton_7.setBounds(0, 496, 189, 56);
+		add(btnNewButton_7);
 		
 	}
 }
