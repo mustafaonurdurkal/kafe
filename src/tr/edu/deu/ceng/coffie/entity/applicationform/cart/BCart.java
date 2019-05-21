@@ -141,29 +141,35 @@ public class BCart extends JPanel {
 		JLabel lblCreateCustomer = new JLabel("Create Customer");
 		lblCreateCustomer.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblCreateCustomer.setBounds(10, 38, 122, 21);
+		lblCreateCustomer.setForeground(new Color(82, 190, 230));
 		add(lblCreateCustomer);
 		
 		JLabel lblNewLabel_1 = new JLabel("Name");
+		lblNewLabel_1.setForeground(Color.ORANGE);
 		lblNewLabel_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_1.setBounds(10, 70, 56, 14);
 		add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Surname");
+		lblNewLabel_2.setForeground(Color.ORANGE);
 		lblNewLabel_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_2.setBounds(10, 95, 56, 14);
 		add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("E-mail");
+		lblNewLabel_3.setForeground(Color.ORANGE);
 		lblNewLabel_3.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_3.setBounds(10, 120, 56, 14);
 		add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Phone");
+		lblNewLabel_4.setForeground(Color.ORANGE);
 		lblNewLabel_4.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_4.setBounds(10, 145, 56, 14);
 		add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("BirtDate(D/M/Y)");
+		lblNewLabel_5.setForeground(Color.ORANGE);
 		lblNewLabel_5.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_5.setBounds(10, 170, 103, 14);
 		add(lblNewLabel_5);
@@ -171,69 +177,106 @@ public class BCart extends JPanel {
 		JLabel lblNewLabel_6 = new JLabel("CartType");
 		lblNewLabel_6.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_6.setBounds(10, 223, 75, 21);
+		lblNewLabel_6.setForeground(new Color(82, 190, 230));
+
 		add(lblNewLabel_6);
 		
 		textField = new JTextField();
 		textField.setBounds(76, 70, 122, 20);
+		textField.setBackground(Color.DARK_GRAY);
+		textField.setForeground(Color.WHITE);
+		textField.setDisabledTextColor(Color.WHITE);
 		add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(76, 92, 122, 20);
+		textField_1.setBackground(Color.DARK_GRAY);
+		textField_1.setForeground(Color.WHITE);
+		textField_1.setDisabledTextColor(Color.WHITE);
 		add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
 		textField_2.setBounds(76, 117, 122, 20);
+		textField_2.setBackground(Color.DARK_GRAY);
+		textField_2.setForeground(Color.WHITE);
+		textField_2.setDisabledTextColor(Color.WHITE);
 		add(textField_2);
 		textField_2.setColumns(10);
 		
 		textField_3 = new JTextField();
 		textField_3.setBounds(76, 142, 122, 20);
+		textField_3.setBackground(Color.DARK_GRAY);
+		textField_3.setForeground(Color.WHITE);
+		textField_3.setDisabledTextColor(Color.WHITE);
 		add(textField_3);
 		textField_3.setColumns(10);
 		
 		JSpinner spinner = new JSpinner();
 		spinner.setBounds(10, 192, 56, 20);
+		JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor) 
+	    spinner.getEditor();
+		jsEditor.getTextField().setBackground(Color.red);
+		jsEditor.getTextField().setForeground(Color.WHITE);
 		add(spinner);
 		
 		JSpinner spinner_1 = new JSpinner();
 		spinner_1.setBounds(76, 192, 56, 20);
+		JSpinner.NumberEditor jsEditor1 = (JSpinner.NumberEditor) 
+	    spinner_1.getEditor();
+		jsEditor1.getTextField().setBackground(Color.red);
+		jsEditor1.getTextField().setForeground(Color.WHITE);
 		add(spinner_1);
 		
 		JSpinner spinner_2 = new JSpinner();
 		spinner_2.setBounds(142, 192, 56, 20);
+		JSpinner.NumberEditor jsEditor2 = (JSpinner.NumberEditor) 
+	    spinner_2.getEditor();
+		jsEditor2.getTextField().setBackground(Color.red);
+		jsEditor2.getTextField().setForeground(Color.WHITE);
 		add(spinner_2);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Regular");
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton.setBounds(6, 251, 79, 23);
+		rdbtnNewRadioButton.setBackground(Color.DARK_GRAY);
+		rdbtnNewRadioButton.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Student");
 		buttonGroup.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_1.setBounds(87, 251, 75, 23);
+		rdbtnNewRadioButton_1.setBackground(Color.DARK_GRAY);
+		rdbtnNewRadioButton_1.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Premium");
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_2.setBounds(164, 251, 85, 23);
+		rdbtnNewRadioButton_2.setBackground(Color.DARK_GRAY);
+		rdbtnNewRadioButton_2.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_2);
 		
 		JButton btnNewButton = new JButton("Create Customer");
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
-		btnNewButton.setBounds(10, 293, 145, 23);
+		btnNewButton.setBounds(10, 293, 152, 23);
+		btnNewButton.setBackground(Color.DARK_GRAY);
+		btnNewButton.setForeground(Color.WHITE);
 		add(btnNewButton);
 		
 		JLabel lblNewLabel_8 = new JLabel("Create Card");
 		lblNewLabel_8.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_8.setBounds(268, 38, 103, 21);
+		lblNewLabel_8.setForeground(new Color(82, 190, 230));
+
 		add(lblNewLabel_8);
 		
 		JLabel lblNewLabel_9 = new JLabel("Card Type");
+		lblNewLabel_9.setForeground(Color.ORANGE);
 		lblNewLabel_9.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_9.setBounds(268, 67, 75, 21);
 		add(lblNewLabel_9);
@@ -241,14 +284,18 @@ public class BCart extends JPanel {
 		JLabel lblNewLabel_10 = new JLabel("Add Balance");
 		lblNewLabel_10.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_10.setBounds(268, 195, 94, 21);
+		lblNewLabel_10.setForeground(new Color(82, 190, 230));
+
 		add(lblNewLabel_10);
 		
 		JLabel lblNewLabel_11 = new JLabel("Amount :");
+		lblNewLabel_11.setForeground(Color.ORANGE);
 		lblNewLabel_11.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_11.setBounds(268, 226, 67, 23);
 		add(lblNewLabel_11);
 		
 		JLabel lblNewLabel_12 = new JLabel("CustomerId :");
+		lblNewLabel_12.setForeground(Color.ORANGE);
 		lblNewLabel_12.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_12.setBounds(268, 120, 88, 21);
 		add(lblNewLabel_12);
@@ -256,30 +303,45 @@ public class BCart extends JPanel {
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Regular");
 		rdbtnNewRadioButton_3.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_3.setBounds(268, 91, 88, 23);
+		rdbtnNewRadioButton_3.setBackground(Color.DARK_GRAY);
+		rdbtnNewRadioButton_3.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_3);
 		
 		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Student");
 		rdbtnNewRadioButton_4.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_4.setBounds(358, 91, 75, 23);
+		rdbtnNewRadioButton_4.setBackground(Color.DARK_GRAY);
+		rdbtnNewRadioButton_4.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_4);
 		
 		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Premium");
 		rdbtnNewRadioButton_5.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_5.setBounds(441, 91, 75, 23);
+		rdbtnNewRadioButton_5.setBackground(Color.DARK_GRAY);
+		rdbtnNewRadioButton_5.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_5);
 		
 		textField_4 = new JTextField();
 		textField_4.setBounds(366, 120, 86, 20);
+		textField_4.setBackground(Color.DARK_GRAY);
+		textField_4.setForeground(Color.WHITE);
+		textField_4.setDisabledTextColor(Color.WHITE);
 		add(textField_4);
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Create Card");
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnNewButton_1.setBounds(268, 145, 122, 23);
+		btnNewButton_1.setBackground(Color.DARK_GRAY);
+		btnNewButton_1.setForeground(Color.WHITE);
 		add(btnNewButton_1);
 		
 		JSpinner spinner_3 = new JSpinner();
 		spinner_3.setBounds(345, 223, 86, 21);
+		JSpinner.NumberEditor jsEditor3 = (JSpinner.NumberEditor) 
+	    spinner_3.getEditor();
+		jsEditor3.getTextField().setBackground(Color.red);
+		jsEditor3.getTextField().setForeground(Color.WHITE);
 		add(spinner_3);
 		
 		JLabel lblTl = new JLabel("TL");
@@ -290,46 +352,64 @@ public class BCart extends JPanel {
 		JButton btnNewButton_2 = new JButton("Add");
 		btnNewButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_2.setBounds(268, 261, 122, 23);
+		btnNewButton_2.setBackground(Color.DARK_GRAY);
+		btnNewButton_2.setForeground(Color.WHITE);
 		add(btnNewButton_2);
 		
 		JLabel lblNewLabel_13 = new JLabel("Remove Customer");
 		lblNewLabel_13.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_13.setBounds(10, 327, 122, 23);
+		lblNewLabel_13.setForeground(new Color(82, 190, 230));
+
 		add(lblNewLabel_13);
 		
 		JLabel lblNewLabel_14 = new JLabel("Customer Id :");
+		lblNewLabel_14.setForeground(Color.ORANGE);
 		lblNewLabel_14.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_14.setBounds(10, 361, 103, 21);
 		add(lblNewLabel_14);
 		
 		textField_5 = new JTextField();
 		textField_5.setBounds(123, 361, 86, 20);
+		textField_5.setBackground(Color.DARK_GRAY);
+		textField_5.setForeground(Color.WHITE);
+		textField_5.setDisabledTextColor(Color.WHITE);
 		add(textField_5);
 		textField_5.setColumns(10);
 		
 		JButton btnRemove = new JButton("Remove");
 		btnRemove.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnRemove.setBounds(10, 393, 89, 23);
+		btnRemove.setBackground(Color.DARK_GRAY);
+		btnRemove.setForeground(Color.WHITE);
 		add(btnRemove);
 		
 		JLabel lblRemoveCard = new JLabel("Remove Card");
 		lblRemoveCard.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblRemoveCard.setBounds(268, 332, 103, 18);
+		lblRemoveCard.setForeground(new Color(82, 190, 230));
+
 		add(lblRemoveCard);
 		
 		JLabel lblCardId = new JLabel("Card Id :");
+		lblCardId.setForeground(Color.ORANGE);
 		lblCardId.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblCardId.setBounds(268, 364, 75, 18);
 		add(lblCardId);
 		
 		textField_6 = new JTextField();
 		textField_6.setBounds(366, 361, 86, 20);
+		textField_6.setBackground(Color.DARK_GRAY);
+		textField_6.setForeground(Color.WHITE);
+		textField_6.setDisabledTextColor(Color.WHITE);
 		add(textField_6);
 		textField_6.setColumns(10);
 		
 		JButton btnRemoveCard = new JButton("Remove Card");
 		btnRemoveCard.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnRemoveCard.setBounds(268, 394, 122, 23);
+		btnRemoveCard.setBackground(Color.DARK_GRAY);
+		btnRemoveCard.setForeground(Color.WHITE);
 		add(btnRemoveCard);
 		
 		btnNewButton.addActionListener(new ActionListener() {
