@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -25,6 +26,11 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
+import tr.edu.deu.ceng.coffie.entity.applicationform.CheckOut;
+import tr.edu.deu.ceng.coffie.entity.applicationform.TableConfiguration;
+import tr.edu.deu.ceng.coffie.entity.applicationform.cart.Cart;
+import tr.edu.deu.ceng.coffie.entity.applicationform.menuitems.BFoodAndDrink;
+import tr.edu.deu.ceng.coffie.entity.applicationform.menuitems.FoodAndDrinkMenu;
 import tr.edu.deu.ceng.coffie.entity.table.InnerTable;
 import tr.edu.deu.ceng.coffie.entity.table.Table;
 import java.awt.event.ActionListener;
@@ -36,8 +42,10 @@ public class Bmainpanel extends JPanel {
 	private JPanel panel_1;
 	private JPanel panel_2;
 	private JPanel panel_3;
-	public Bmainpanel(String fileName) throws IOException {
+	private JFrame parent;
+	public Bmainpanel(String fileName,JFrame parent) throws IOException {
 	    backgroundImage = ImageIO.read(new File(fileName));
+	    this.parent = parent;
 	  }
        @Override
 	  public void paintComponent(Graphics g) {
@@ -52,6 +60,8 @@ public class Bmainpanel extends JPanel {
 		
        lazziya();
 	}
+	
+	
 	public void lazziya() {
 		setLayout(null);
 		this.setBounds(0, 0, 1280, 720);
@@ -63,6 +73,12 @@ public class Bmainpanel extends JPanel {
 		panel_1.setLayout(null);
 		
 		JButton btnNewButton = new JButton("CHECK&ORDER");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CheckOut.main(null);
+				parent.setVisible(false);
+			}
+		});
 		btnNewButton.setFocusable(false);
 		btnNewButton.setBorder(null);
 		btnNewButton.setForeground(new Color(82, 190, 230));
@@ -72,6 +88,13 @@ public class Bmainpanel extends JPanel {
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("CARDS&CUSTOMER");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Cart.main(null);
+				parent.setVisible(false);
+
+			}
+		});
 
 		btnNewButton_1.setBorder(null);
 		btnNewButton_1.setFocusable(false);
@@ -82,6 +105,13 @@ public class Bmainpanel extends JPanel {
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_3 = new JButton("MENU CONFIGURATION");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FoodAndDrinkMenu.main(null);
+				parent.setVisible(false);
+
+			}
+		});
 		btnNewButton_3.setBorder(null);
 		btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setForeground(new Color(82, 190, 230));
@@ -91,6 +121,12 @@ public class Bmainpanel extends JPanel {
 		panel_1.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Table Configuration");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TableConfiguration.main(null);
+				parent.setVisible(false);
+			}
+		});
 		btnNewButton_4.setBorder(null);
 		btnNewButton_4.setFocusable(false);
 		btnNewButton_4.setForeground(new Color(82, 190, 230));

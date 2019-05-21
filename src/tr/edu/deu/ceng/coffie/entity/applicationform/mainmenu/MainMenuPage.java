@@ -43,7 +43,7 @@ public class MainMenuPage {
 		frame.setUndecorated(true);
 		Bmainpanel mainpanel=null;
 		try {
-			mainpanel=new Bmainpanel("resources/background2.jpg");
+			mainpanel=new Bmainpanel("resources/background2.jpg",frame);
 			frame.getContentPane().add(mainpanel);
 		}catch(IOException e) {
 			e.printStackTrace();
