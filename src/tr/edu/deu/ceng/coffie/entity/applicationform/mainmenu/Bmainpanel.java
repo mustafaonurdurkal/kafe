@@ -27,6 +27,8 @@ import javax.swing.event.ChangeListener;
 import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
 import tr.edu.deu.ceng.coffie.entity.table.InnerTable;
 import tr.edu.deu.ceng.coffie.entity.table.Table;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Bmainpanel extends JPanel {
 	
@@ -60,40 +62,32 @@ public class Bmainpanel extends JPanel {
 		add(panel_1);
 		panel_1.setLayout(null);
 		
-		JButton btnNewButton = new JButton("CHECK");
+		JButton btnNewButton = new JButton("CHECK&ORDER");
 		btnNewButton.setFocusable(false);
 		btnNewButton.setBorder(null);
 		btnNewButton.setForeground(new Color(82, 190, 230));
 		btnNewButton.setBackground(new Color(0,0,0));
-		btnNewButton.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-		btnNewButton.setBounds(29, 0, 154, 57);
+		btnNewButton.setFont(new Font("Bauhaus 93", Font.PLAIN, 25));
+		btnNewButton.setBounds(58, 0, 197, 57);
 		panel_1.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("CARDS");
+		JButton btnNewButton_1 = new JButton("CARDS&CUSTOMER");
+
 		btnNewButton_1.setBorder(null);
 		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setForeground(new Color(82, 190, 230));
 		btnNewButton_1.setBackground(new Color(0,0,0));
-		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-		btnNewButton_1.setBounds(232, 0, 165, 57);
+		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.PLAIN, 22));
+		btnNewButton_1.setBounds(310, 1, 195, 57);
 		panel_1.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("SHOW");
-		btnNewButton_2.setBorder(null);
-		btnNewButton_2.setFocusable(false);
-		btnNewButton_2.setForeground(new Color(82, 190, 230));
-		btnNewButton_2.setBackground(new Color(0,0,0));
-		btnNewButton_2.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-		btnNewButton_2.setBounds(437, 0, 165, 57);
-		panel_1.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("ORDER");
+		JButton btnNewButton_3 = new JButton("MENU CONFIGURATION");
 		btnNewButton_3.setBorder(null);
 		btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setForeground(new Color(82, 190, 230));
 		btnNewButton_3.setBackground(new Color(0,0,0));
-		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-		btnNewButton_3.setBounds(645, 0, 171, 57);
+		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.PLAIN, 20));
+		btnNewButton_3.setBounds(581, 2, 207, 57);
 		panel_1.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Table Configuration");
