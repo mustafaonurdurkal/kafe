@@ -1,11 +1,11 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.cart;
 
 import java.awt.EventQueue;
 import java.io.IOException;
-import javax.swing.*;
 
+import javax.swing.JFrame;
 
-public class startingPage {
+public class Cart {
 
 	private JFrame frame;
 
@@ -16,7 +16,7 @@ public class startingPage {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					startingPage window = new startingPage();
+					Cart window = new Cart();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -28,7 +28,7 @@ public class startingPage {
 	/**
 	 * Create the application.
 	 */
-	public startingPage() {
+	public Cart() {
 		initialize();
 	}
 
@@ -40,15 +40,15 @@ public class startingPage {
 		frame.setBounds(0, 0, 1280, 720);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Bpanel dogi=null;
+		BCart cart =null;
 		try {
-			dogi=new Bpanel("resources/background.jpg");
-			frame.getContentPane().add(dogi);
+			cart=new BCart("resources/background2.jpg");
+			frame.getContentPane().add(cart);
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
 		frame.setUndecorated(true);
-		    dogi.mertcumali();
+		cart.SuleymanDemirel();
 	}
 
 }

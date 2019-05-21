@@ -5,9 +5,28 @@ import java.time.LocalDate;
 import tr.edu.deu.ceng.coffie.entity.cart.CoffieCart;
 
 public class Customer {
+	private long id;
 	private String name, surname, email, phone,adress;
 	private LocalDate birthday;
 	private CoffieCart cart;
+
+	
+	
+	
+	public Customer(long id, String name, String surname, String email, String phone, String adress, LocalDate birthday) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
+		this.email = email;
+		this.phone = phone;
+		this.adress = adress;
+		this.birthday = birthday;
+	}
+
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getName() {
 		return name;
@@ -63,6 +82,14 @@ public class Customer {
 
 	public void setAdress(String adress) {
 		this.adress = adress;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

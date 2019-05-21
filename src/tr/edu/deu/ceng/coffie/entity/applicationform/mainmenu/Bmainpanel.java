@@ -1,4 +1,4 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.mainmenu;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -10,6 +10,8 @@ import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -21,6 +23,10 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
+import tr.edu.deu.ceng.coffie.entity.table.InnerTable;
+import tr.edu.deu.ceng.coffie.entity.table.Table;
 
 public class Bmainpanel extends JPanel {
 	
@@ -130,16 +136,22 @@ public class Bmainpanel extends JPanel {
 				panel_3.invalidate();
 			}
 		});
-		for (int i = 0; i <99; i++) {
-			addTable(panel_2,i);
-			addTable(panel_3,i);
+		List<Table> tables = Memory.getMemory().getTables();
+		for (Iterator iterator = tables.iterator(); iterator.hasNext();) {
+			Table table = (Table) iterator.next();
+			if(table instanceof InnerTable) {
+				addTable(panel_2, table);
+			}else {
+				addTable(panel_3, table);
+			}
+			
 		}
 		add(scrollPane2);
 		add(scrollPane1);
 		
 		
 	}
-	public void addTable(JComponent panel,int number) {
+	public void addTable(JComponent panel,Table sitTable) {
 		ImageIcon table = new ImageIcon("resources/table.png");
 
 		JPanel tablepanel=new JPanel();
@@ -153,7 +165,7 @@ public class Bmainpanel extends JPanel {
 			tablebutton.setContentAreaFilled(false);
 			tablebutton.setOpaque(true);
 			
-		JLabel tablelabel = new JLabel(number<10 ? "Table 0"+number:"Table "+number);
+		JLabel tablelabel = new JLabel("Table "+sitTable.getName());
 			tablelabel.setForeground(Color.WHITE);
 			tablelabel.setHorizontalAlignment(SwingConstants.CENTER);
 			tablelabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 15));

@@ -1,19 +1,27 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.loginpanel;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.border.LineBorder;
 import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
@@ -31,19 +39,23 @@ import javax.swing.ImageIcon;
 
 import java.awt.Component;
 import net.miginfocom.swing.MigLayout;
+import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
+import tr.edu.deu.ceng.coffie.entity.applicationform.mainmenu.MainMenuPage;
+import tr.edu.deu.ceng.coffie.entity.auth.Loginnable;
+
 import java.awt.Canvas;
 import javax.swing.JTextField;
 
-public class Bpanel extends JPanel {
+public class LoginPanel extends JPanel {
 	 private Image backgroundImage;
 	 private JPanel panel;
 	 private JTextField textField;
 	 private JTextField textField_1;
-
-	  // Some code to initialize the background image.
-	  // Here, we use the constructor to load the image. This
-	  // can vary depending on the use case of the panel.
-	  public Bpanel(String fileName) throws IOException {
+	 private JFrame parent;
+	 
+	 private Loginnable current;
+	 
+	  public LoginPanel(String fileName) throws IOException {
 	    backgroundImage = ImageIO.read(new File(fileName));
 	  }
        @Override
@@ -53,11 +65,12 @@ public class Bpanel extends JPanel {
 
 	  }
 
-	/**
-	 * Create the panel.
-	 */
-	public Bpanel() {
+	public LoginPanel() {
        mertcumali();
+	}
+	public LoginPanel(String string, JFrame frame) throws IOException {
+		this(string);
+		parent = frame;
 	}
 	public void mertcumali() {
 		this.setBounds(0, 0, 1280, 720);
@@ -112,6 +125,22 @@ public class Bpanel extends JPanel {
 		textField.setBounds(203, 189, 259, 26);
 		panel_4.add(textField);
 		textField.setColumns(10);
+		textField.addFocusListener(new FocusListener() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				current = Memory.getMemory().getLoginInfo().get(textField.getText());
+				if(current == null) {
+					JOptionPane.showMessageDialog(null, "Email is not valid please check");
+
+				}
+			
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+			}
+		});
+		
 		
 		textField_1 = new JTextField();
 		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -124,5 +153,51 @@ public class Bpanel extends JPanel {
 		panel_4.add(textField_1);
 		textField_1.setColumns(10);
 		
+		textField_1.addFocusListener(new FocusListener() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(current != null) {
+					if(current.getPassword().equals(textField_1.getText())) {
+						// Another fill here.
+					}else {
+						JOptionPane.showMessageDialog(null, "Password is not valid please check");
+					}
+				}else {
+						JOptionPane.showMessageDialog(null, "Email is not valid please check");
+						
+				}
+			
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+
+			}
+		});
+		
+		textField_1.getDocument().addDocumentListener(new DocumentListener() {
+
+			@Override
+			public void insertUpdate(DocumentEvent e) {		
+				if(current.getPassword().equals(textField_1.getText())) {
+						MainMenuPage.main(null);
+						Memory.getMemory().setActiveLogin(current);
+						parent.setVisible(false);
+				}
+			}
+
+			@Override
+			public void removeUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void changedUpdate(DocumentEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		    // implement the methods
+		});
 	}
 }

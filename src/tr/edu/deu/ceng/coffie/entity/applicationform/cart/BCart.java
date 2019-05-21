@@ -1,4 +1,4 @@
-package tr.edu.deu.ceng.coffie.entity.applicationform;
+package tr.edu.deu.ceng.coffie.entity.applicationform.cart;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -6,8 +6,13 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Iterator;
 
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
@@ -15,6 +20,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
+import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
+import tr.edu.deu.ceng.coffie.entity.Customer;
+import tr.edu.deu.ceng.coffie.entity.cart.CoffieCart;
+import tr.edu.deu.ceng.coffie.entity.cart.PremiumCart;
+import tr.edu.deu.ceng.coffie.entity.cart.RegularCart;
+import tr.edu.deu.ceng.coffie.entity.cart.StudentCart;
+
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
 import javax.swing.JRadioButton;
@@ -58,36 +72,48 @@ public class BCart extends JPanel {
 		setLayout(null);
 		
 		String[] columnNames = { "Card Id", "Card Type", "Balance","Customer Name"};
-		Object[][] data = {
-				{ new Integer(1), "Regular", "350,00TL","Customer1"},
-				{ new Integer(2), "Student", "72,00TL","Customer2"},
-				{ new Integer(3), "Premium","553,00TL","Customer3"}	
-		};
-		
+		DefaultTableModel dtm = new DefaultTableModel(0, 0);
+
+		dtm.setColumnIdentifiers(columnNames);
 		String[] columnNames2 = { "Id","Name", "Surname","Card Type", "Email","Phone","BirthDate"};
-		Object[][] data2 = {
-				{  new Integer(1),"Muslum","Gurses","Premium","muslumbaba@msn.com","05068884545","3/8/1958"},
-				{  new Integer(2),"Hakan"," Tasiyan", "Regular","hakantasiyon@google.com","05452124541","4/4/1984"}
-		};
+		DefaultTableModel dtm2 = new DefaultTableModel(0, 0);
+		dtm2.setColumnIdentifiers(columnNames2);
+
 		
-		table = new JTable(data, columnNames);
+		table = new JTable();
+		table.setModel(dtm);
 	    table.setPreferredScrollableViewportSize(new Dimension(200, 70));
 	    table.setBackground(Color.DARK_GRAY);
 		table.setForeground(Color.WHITE);
 		table.setFillsViewportHeight(true);
 		table.setOpaque(false);
 		
+		java.util.List<CoffieCart> carts = Memory.getMemory().getCarts();
+		for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
+			CoffieCart coffieCart = (CoffieCart) iterator.next();
+	        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+	                coffieCart.getCustomer().getName() });
+		}
+		
+		java.util.List<Customer> customeres = Memory.getMemory().getCustomers();
+		
+		for (Iterator iterator = customeres.iterator(); iterator.hasNext();) {
+			Customer customer = (Customer) iterator.next();
+			dtm2.addRow(new Object[] { customer.getId(),customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
+		}
+		
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(957, 60, 288, 531);
 		scrollPane.getViewport().setBackground(Color.DARK_GRAY);
 		add(scrollPane);
 		
-		table2 = new JTable(data2, columnNames2);
+		table2 = new JTable();
 	    table2.setPreferredScrollableViewportSize(new Dimension(200, 70));
 	    table2.setBackground(Color.DARK_GRAY);
 		table2.setForeground(Color.WHITE);
 		table2.setFillsViewportHeight(true);
 		table2.setOpaque(false);
+		table2.setModel(dtm2);
 		
 		JScrollPane scrollPane2 = new JScrollPane(table2);
 		scrollPane2.setBounds(614, 60, 333, 531);
@@ -303,5 +329,77 @@ public class BCart extends JPanel {
 		btnRemoveCard.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnRemoveCard.setBounds(268, 394, 122, 23);
 		add(btnRemoveCard);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Customer customer = new Customer();
+				customer.setName(textField.getText());
+				customer.setSurname(textField_1.getText());
+				customer.setEmail(textField_2.getText());
+				customer.setPhone(textField_3.getText());
+				LocalDate ld = LocalDate.of(Integer.valueOf(String.valueOf(spinner_3.getValue()))
+						, Integer.valueOf(String.valueOf(spinner.getValue())),
+								Integer.valueOf(String.valueOf(spinner_1.getValue())));
+				customer.setBirthday(ld);
+				CoffieCart cart=null;
+				if(rdbtnNewRadioButton.isSelected()) {
+					cart = new RegularCart();
+				}
+				if(rdbtnNewRadioButton_1.isSelected()) {
+					cart = new StudentCart();
+				}
+				if(rdbtnNewRadioButton_2.isSelected()) {
+					cart = new PremiumCart();
+				}
+				cart.setCustomer(customer);
+				customer.setCart(cart);
+				Memory.getMemory().getCustomers().add(customer);
+				Memory.getMemory().getCarts().add(cart);
+				CoffieCart coffieCart = cart;
+			      dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+			                coffieCart.getCustomer().getName() });
+				dtm2.addRow(new Object[] { customer.getId(),customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
+   
+			}
+		});
+		
+		btnRemove.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id = Integer.parseInt(textField_5.getText());
+				Customer customer = Memory.getMemory().getCustomers().get(id);
+				if(customer != null) {
+					Memory.getMemory().getCustomers().remove(id);
+					Memory.getMemory().getCarts().remove(customer.getCart());
+					
+					if (dtm.getRowCount() > 0) {
+					    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+					        dtm.removeRow(i);
+					    }
+					}
+					if (dtm2.getRowCount() > 0) {
+					    for (int i = dtm2.getRowCount() - 1; i > -1; i--) {
+					        dtm2.removeRow(i);
+					    }
+					}
+					
+					for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
+						CoffieCart coffieCart = (CoffieCart) iterator.next();
+				        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+				                coffieCart.getCustomer().getName() });
+					}
+					
+					java.util.List<Customer> customeres = Memory.getMemory().getCustomers();
+					
+					for (Iterator iterator = customeres.iterator(); iterator.hasNext();) {
+						customer = (Customer) iterator.next();
+						dtm2.addRow(new Object[] { customer.getId(),customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
+					}
+				}
+			}
+		});
 	}
 }
