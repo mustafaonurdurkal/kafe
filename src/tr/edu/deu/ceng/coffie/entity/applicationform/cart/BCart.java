@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Iterator;
 
@@ -25,6 +26,7 @@ import javax.swing.table.DefaultTableModel;
 import tr.edu.deu.ceng.coffie.db.inmemory.Memory;
 import tr.edu.deu.ceng.coffie.entity.Customer;
 import tr.edu.deu.ceng.coffie.entity.cart.CoffieCart;
+import tr.edu.deu.ceng.coffie.entity.cart.NoneCart;
 import tr.edu.deu.ceng.coffie.entity.cart.PremiumCart;
 import tr.edu.deu.ceng.coffie.entity.cart.RegularCart;
 import tr.edu.deu.ceng.coffie.entity.cart.StudentCart;
@@ -343,6 +345,7 @@ public class BCart extends JPanel {
 						, Integer.valueOf(String.valueOf(spinner.getValue())),
 								Integer.valueOf(String.valueOf(spinner_1.getValue())));
 				customer.setBirthday(ld);
+				customer.setId(Memory.getMemory().getCarts().size());
 				CoffieCart cart=null;
 				if(rdbtnNewRadioButton.isSelected()) {
 					cart = new RegularCart();
@@ -398,6 +401,103 @@ public class BCart extends JPanel {
 						customer = (Customer) iterator.next();
 						dtm2.addRow(new Object[] { customer.getId(),customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
 					}
+				}
+			}
+		});
+		
+		btnNewButton_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id = Integer.parseInt(textField_4.getText());
+				Customer customer = Memory.getMemory().getCustomers().get(id);
+				if(customer != null) {
+					if(customer.getCart() == NoneCart.NONE) {
+						CoffieCart cart = null;
+						if(rdbtnNewRadioButton_3.isSelected()) {
+							cart = new RegularCart();
+						}
+						if(rdbtnNewRadioButton_4.isSelected()) {
+							cart = new StudentCart();
+						}
+						if(rdbtnNewRadioButton_5.isSelected()) {
+							cart = new PremiumCart();
+						}
+						if(cart != null) {
+							customer.setCart(cart);
+							cart.setCustomer(customer);
+							cart.setId(Memory.getMemory().getCarts().size());
+							Memory.getMemory().getCarts().add(cart);
+							if (dtm.getRowCount() > 0) {
+							    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+							        dtm.removeRow(i);
+							    }
+							}
+							if (dtm2.getRowCount() > 0) {
+							    for (int i = dtm2.getRowCount() - 1; i > -1; i--) {
+							        dtm2.removeRow(i);
+							    }
+							}
+							
+							for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
+								CoffieCart coffieCart = (CoffieCart) iterator.next();
+						        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+						                coffieCart.getCustomer().getName() });
+							}
+							
+							java.util.List<Customer> customeres = Memory.getMemory().getCustomers();
+							
+							for (Iterator iterator = customeres.iterator(); iterator.hasNext();) {
+								customer = (Customer) iterator.next();
+								dtm2.addRow(new Object[] { customer.getId(),customer.getName(),customer.getSurname(),customer.getCart().getClass().getSimpleName(),customer.getEmail(),customer.getPhone(),customer.getBirthday()});
+							}
+						}
+					}
+				}
+			}
+		});
+		btnNewButton_2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int amount = Integer.parseInt(String.valueOf(spinner_3.getValue()));
+				int id = Integer.parseInt(textField_4.getText());
+				Customer customer = Memory.getMemory().getCustomers().get(id);
+				if(customer != null) {
+					customer.getCart().setBalance(customer.getCart().getBalance().add(BigDecimal.valueOf(amount)));
+					if (dtm.getRowCount() > 0) {
+					    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+					        dtm.removeRow(i);
+					    }
+					}
+					for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
+						CoffieCart coffieCart = (CoffieCart) iterator.next();
+				        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+				                coffieCart.getCustomer().getName() });
+					}
+					
+				}
+				
+			}
+		});
+		btnRemoveCard.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int id = Integer.parseInt(textField_6.getText());
+				CoffieCart cart = Memory.getMemory().getCarts().get(id);
+				if(cart != null) {
+					Memory.getMemory().getCarts().remove(cart);
+					if (dtm.getRowCount() > 0) {
+					    for (int i = dtm.getRowCount() - 1; i > -1; i--) {
+					        dtm.removeRow(i);
+					    }
+					}
+					for (Iterator iterator = carts.iterator(); iterator.hasNext();) {
+						CoffieCart coffieCart = (CoffieCart) iterator.next();
+				        dtm.addRow(new Object[] { coffieCart.getId(), coffieCart.getClass().getSimpleName(), coffieCart.getBalance().doubleValue(),
+				                coffieCart.getCustomer().getName() });
+					}
+					
 				}
 			}
 		});

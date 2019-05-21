@@ -3,6 +3,7 @@ package tr.edu.deu.ceng.coffie.entity;
 import java.time.LocalDate;
 
 import tr.edu.deu.ceng.coffie.entity.cart.CoffieCart;
+import tr.edu.deu.ceng.coffie.entity.cart.NoneCart;
 
 public class Customer {
 	private long id;
@@ -22,6 +23,7 @@ public class Customer {
 		this.phone = phone;
 		this.adress = adress;
 		this.birthday = birthday;
+		this.cart= NoneCart.NONE;
 	}
 
 	public Customer() {
