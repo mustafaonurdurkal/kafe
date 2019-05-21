@@ -417,9 +417,10 @@ public class BRecipe extends JPanel {
 		add(textArea_1);
 
 		List<Recipe> recipes = Memory.getMemory().getRecipes();
+		int i=0;
 		for (Iterator iterator = recipes.iterator(); iterator.hasNext();) {
 			Recipe recipe2 = (Recipe) iterator.next();
-			dtm2.addRow(new Object[] { recipe2.getId(), recipe2.getName(), recipe2.getCost() });
+			dtm2.addRow(new Object[] { i++, recipe2.getName(), recipe2.getCost() });
 		}
 
 		List<Item> items = Memory.getMemory().getItems();
@@ -476,6 +477,7 @@ public class BRecipe extends JPanel {
 					}
 					recipe.addItem((Item) comboBox_1.getSelectedItem(), uco);
 				}
+				lblNewLabel_10.setText(recipe.getCost().toString());
 			}
 		});
 
@@ -591,6 +593,7 @@ public class BRecipe extends JPanel {
 					}
 					recipe.addItem((Item) comboBox_3.getSelectedItem(), uco);
 				}
+				lblNewLabel_20.setText(recipe.getCost().toString());
 			}
 		});
 		btnRemove.addActionListener(new ActionListener() {
@@ -645,10 +648,11 @@ public class BRecipe extends JPanel {
 						dtm2.removeRow(i);
 					}
 				}
+				int i =0;
 				List<Recipe> recipes = Memory.getMemory().getRecipes();
 				for (Iterator iterator = recipes.iterator(); iterator.hasNext();) {
 					Recipe recipe2 = (Recipe) iterator.next();
-					dtm2.addRow(new Object[] { recipe2.getId(), recipe2.getName(), recipe2.getCost() });
+					dtm2.addRow(new Object[] { i++, recipe2.getName(), recipe2.getCost() });
 				}
 			}
 		});
