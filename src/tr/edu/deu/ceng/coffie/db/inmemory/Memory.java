@@ -56,6 +56,11 @@ public class Memory {
 				st.setCustomer(customer);
 				customer.setCart(st);
 				carts.add(st);
+				
+				customer = new Customer(2,"doguemp","han","","","",LocalDate.now());
+				customer.setName("dogukan");
+				customer.setEmail("test");
+				customers.add(customer);
 		
 	}
 
