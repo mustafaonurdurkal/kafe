@@ -112,6 +112,7 @@ public class BDEFTERLER extends JPanel {
 		add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("NAME:");
+		lblNewLabel_2.setForeground(Color.ORANGE);
 		lblNewLabel_2.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
 		lblNewLabel_2.setBounds(63, 140, 61, 17);
 		add(lblNewLabel_2);
@@ -125,6 +126,7 @@ public class BDEFTERLER extends JPanel {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("TYPE:");
+		lblNewLabel_3.setForeground(Color.ORANGE);
 		lblNewLabel_3.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
 		lblNewLabel_3.setBounds(63, 170, 61, 14);
 		add(lblNewLabel_3);
@@ -136,6 +138,7 @@ public class BDEFTERLER extends JPanel {
 		add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("MENU NUMBER:");
+		lblNewLabel_5.setForeground(Color.ORANGE);
 		lblNewLabel_5.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
 		lblNewLabel_5.setBounds(63, 283, 106, 29);
 		add(lblNewLabel_5);
@@ -149,6 +152,7 @@ public class BDEFTERLER extends JPanel {
 		textField_2.setColumns(10);
 		
 		JLabel lblNewLabel_6 = new JLabel("RENAME:");
+		lblNewLabel_6.setForeground(Color.ORANGE);
 		lblNewLabel_6.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
 		lblNewLabel_6.setBounds(61, 323, 97, 20);
 		add(lblNewLabel_6);
@@ -162,6 +166,7 @@ public class BDEFTERLER extends JPanel {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel_7 = new JLabel("TYPE:");
+		lblNewLabel_7.setForeground(Color.ORANGE);
 		lblNewLabel_7.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
 		lblNewLabel_7.setBounds(63, 354, 46, 14);
 		add(lblNewLabel_7);
@@ -205,6 +210,7 @@ public class BDEFTERLER extends JPanel {
 		add(lblNewLabel_8);
 		
 		JLabel lblNewLabel_9 = new JLabel("MENU NUMBER:");
+		lblNewLabel_9.setForeground(Color.ORANGE);
 		lblNewLabel_9.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
 		lblNewLabel_9.setBounds(63, 491, 106, 29);
 		add(lblNewLabel_9);

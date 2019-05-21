@@ -148,11 +148,13 @@ public class BFoodAndDrink extends JPanel {
 		add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Item ID :");
+		lblNewLabel_4.setForeground(Color.ORANGE);
 		lblNewLabel_4.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_4.setBounds(0, 45, 73, 14);
 		add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Price :");
+		lblNewLabel_5.setForeground(Color.ORANGE);
 		lblNewLabel_5.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_5.setBounds(0, 71, 73, 14);
 		add(lblNewLabel_5);
@@ -191,6 +193,7 @@ public class BFoodAndDrink extends JPanel {
 		add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("Item ID :");
+		lblNewLabel_7.setForeground(Color.ORANGE);
 		lblNewLabel_7.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_7.setBounds(0, 160, 73, 14);
 		add(lblNewLabel_7);
@@ -204,6 +207,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_2.setColumns(10);
 		
 		JLabel lblNewLabel_8 = new JLabel("Price :");
+		lblNewLabel_8.setForeground(Color.ORANGE);
 		lblNewLabel_8.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_8.setBounds(0, 185, 73, 14);
 		add(lblNewLabel_8);
@@ -217,6 +221,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel_9 = new JLabel("Container1:");
+		lblNewLabel_9.setForeground(Color.ORANGE);
 		lblNewLabel_9.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
 		lblNewLabel_9.setBounds(0, 210, 73, 14);
 		add(lblNewLabel_9);
@@ -230,6 +235,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_4.setColumns(10);
 		
 		JLabel lblNewLabel_10 = new JLabel("Container2:");
+		lblNewLabel_10.setForeground(Color.ORANGE);
 		lblNewLabel_10.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
 		lblNewLabel_10.setBounds(0, 235, 73, 14);
 		add(lblNewLabel_10);
@@ -243,6 +249,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_5.setColumns(10);
 		
 		JLabel lblNewLabel_11 = new JLabel("Container3:");
+		lblNewLabel_11.setForeground(Color.ORANGE);
 		lblNewLabel_11.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
 		lblNewLabel_11.setBounds(0, 260, 73, 14);
 		add(lblNewLabel_11);
@@ -256,6 +263,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_6.setColumns(10);
 		
 		JLabel lblNewLabel_12 = new JLabel("Container4:");
+		lblNewLabel_12.setForeground(Color.ORANGE);
 		lblNewLabel_12.setFont(new Font("Bauhaus 93", Font.ITALIC, 12));
 		lblNewLabel_12.setBounds(0, 286, 73, 14);
 		add(lblNewLabel_12);
@@ -286,11 +294,13 @@ public class BFoodAndDrink extends JPanel {
 		add(lblNewLabel_13);
 		
 		JLabel lblNewLabel_14 = new JLabel("Item ID :");
+		lblNewLabel_14.setForeground(Color.ORANGE);
 		lblNewLabel_14.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_14.setBounds(0, 370, 73, 14);
 		add(lblNewLabel_14);
 		
 		JLabel lblNewLabel_15 = new JLabel("Price :");
+		lblNewLabel_15.setForeground(Color.ORANGE);
 		lblNewLabel_15.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_15.setBounds(0, 396, 73, 14);
 		add(lblNewLabel_15);
@@ -381,6 +391,7 @@ public class BFoodAndDrink extends JPanel {
 		add(btnNewButton_6);
 		
 		JLabel lblNewLabel_17 = new JLabel("Item ID :");
+		lblNewLabel_17.setForeground(Color.ORANGE);
 		lblNewLabel_17.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		lblNewLabel_17.setBounds(10, 545, 63, 23);
 		add(lblNewLabel_17);
