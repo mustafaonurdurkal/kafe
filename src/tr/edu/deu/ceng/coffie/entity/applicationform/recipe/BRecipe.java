@@ -174,6 +174,7 @@ public class BRecipe extends JPanel {
 		add(lblNewLabel_8);
 
 		JButton btnNewButton = new JButton("Add Package Item");
+		btnNewButton.setFocusable(false);
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnNewButton.setBounds(228, 228, 178, 23);
 		btnNewButton.setBackground(Color.DARK_GRAY);
@@ -193,6 +194,7 @@ public class BRecipe extends JPanel {
 		panel.add(table_1);
 
 		JButton btnNewButton_1 = new JButton("Create Recipe");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_1.setBounds(275, 633, 164, 32);
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
@@ -224,6 +226,7 @@ public class BRecipe extends JPanel {
 		add(comboBox_1);
 
 		JButton btnNewButton_2 = new JButton("Remove");
+		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnNewButton_2.setBounds(274, 580, 89, 23);
 		btnNewButton_2.setBackground(Color.DARK_GRAY);
@@ -251,6 +254,7 @@ public class BRecipe extends JPanel {
 		textField_4.setColumns(10);
 
 		JButton btnNewButton_3 = new JButton("List Detail");
+		btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_3.setBounds(603, 95, 106, 32);
 		btnNewButton_3.setBackground(Color.DARK_GRAY);
@@ -264,7 +268,7 @@ public class BRecipe extends JPanel {
 		add(lblNewLabel_13);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(784, 162, 194, 223);
+		panel_1.setBounds(747, 155, 194, 223);
 		panel_1.setBackground(Color.DARK_GRAY);
 		panel_1.setForeground(Color.WHITE);
 		add(panel_1);
@@ -276,8 +280,9 @@ public class BRecipe extends JPanel {
 		panel_1.add(table_2);
 
 		JButton btnRemove = new JButton("Remove");
+		btnRemove.setFocusable(false);
 		btnRemove.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
-		btnRemove.setBounds(764, 396, 89, 23);
+		btnRemove.setBounds(747, 389, 89, 23);
 		btnRemove.setBackground(Color.DARK_GRAY);
 		btnRemove.setForeground(Color.WHITE);
 		add(btnRemove);
@@ -289,6 +294,7 @@ public class BRecipe extends JPanel {
 		add(lblTotalPrice);
 
 		JButton btnNewButton_4 = new JButton("Modify Recipe");
+		btnNewButton_4.setFocusable(false);
 		btnNewButton_4.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_4.setBounds(574, 522, 135, 32);
 		btnNewButton_4.setBackground(Color.DARK_GRAY);
@@ -298,19 +304,19 @@ public class BRecipe extends JPanel {
 		JLabel lblNewLabel_14 = new JLabel("Countable Item");
 		lblNewLabel_14.setForeground(UIManager.getColor("info"));
 		lblNewLabel_14.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_14.setBounds(764, 444, 98, 14);
+		lblNewLabel_14.setBounds(747, 444, 98, 14);
 		add(lblNewLabel_14);
 
 		JLabel lblNewLabel_15 = new JLabel("Uncontable Item");
 		lblNewLabel_15.setForeground(UIManager.getColor("info"));
 		lblNewLabel_15.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_15.setBounds(764, 469, 98, 14);
+		lblNewLabel_15.setBounds(747, 472, 98, 14);
 		add(lblNewLabel_15);
 
 		JLabel lblNewLabel_16 = new JLabel("Package Item");
 		lblNewLabel_16.setForeground(UIManager.getColor("info"));
 		lblNewLabel_16.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
-		lblNewLabel_16.setBounds(874, 416, 104, 14);
+		lblNewLabel_16.setBounds(855, 416, 104, 14);
 		add(lblNewLabel_16);
 
 		JLabel lblNewLabel_17 = new JLabel("A&Q");
@@ -320,19 +326,19 @@ public class BRecipe extends JPanel {
 		add(lblNewLabel_17);
 
 		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(872, 441, 106, 20);
+		comboBox_2.setBounds(855, 441, 106, 20);
 		comboBox_2.setBackground(Color.DARK_GRAY);
 		comboBox_2.setForeground(Color.WHITE);
 		add(comboBox_2);
 
 		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(872, 469, 106, 20);
+		comboBox_3.setBounds(855, 469, 106, 20);
 		comboBox_3.setBackground(Color.DARK_GRAY);
 		comboBox_3.setForeground(Color.WHITE);
 		add(comboBox_3);
 
 		textField_7 = new JTextField();
-		textField_7.setBounds(992, 441, 57, 20);
+		textField_7.setBounds(971, 441, 57, 20);
 		textField_7.setBackground(Color.DARK_GRAY);
 		textField_7.setForeground(Color.WHITE);
 		textField_7.setDisabledTextColor(Color.WHITE);
@@ -340,7 +346,7 @@ public class BRecipe extends JPanel {
 		textField_7.setColumns(10);
 
 		textField_8 = new JTextField();
-		textField_8.setBounds(992, 469, 57, 20);
+		textField_8.setBounds(971, 469, 57, 20);
 		textField_8.setBackground(Color.DARK_GRAY);
 		textField_8.setForeground(Color.WHITE);
 		textField_8.setDisabledTextColor(Color.WHITE);
@@ -348,6 +354,7 @@ public class BRecipe extends JPanel {
 		textField_8.setColumns(10);
 
 		JButton btnNewButton_5 = new JButton("Add Item");
+		btnNewButton_5.setFocusable(false);
 		btnNewButton_5.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnNewButton_5.setBounds(764, 494, 89, 23);
 		btnNewButton_5.setBackground(Color.DARK_GRAY);
@@ -375,11 +382,20 @@ public class BRecipe extends JPanel {
 		textField_9.setColumns(10);
 
 		JButton btnRemove_1 = new JButton("Remove");
+		btnRemove_1.setFocusable(false);
 		btnRemove_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnRemove_1.setBounds(702, 654, 89, 23);
 		btnRemove_1.setBackground(Color.DARK_GRAY);
 		btnRemove_1.setForeground(Color.WHITE);
 		add(btnRemove_1);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setFocusable(false);
+		btnBack.setForeground(Color.RED);
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnBack.setBounds(1087, 677, 160, 32);
+		add(btnBack);
 
 		JLabel lblNewLabel_20 = new JLabel("Null");
 		lblNewLabel_20.setForeground(UIManager.getColor("info"));
@@ -395,7 +411,7 @@ public class BRecipe extends JPanel {
 		add(textArea);
 
 		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBounds(547, 155, 207, 334);
+		textArea_1.setBounds(507, 155, 207, 334);
 		textArea_1.setCaretColor(Color.RED);
 		textArea_1.setBackground(Color.DARK_GRAY);
 		add(textArea_1);

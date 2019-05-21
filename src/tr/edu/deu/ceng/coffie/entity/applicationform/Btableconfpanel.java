@@ -75,7 +75,7 @@ public class Btableconfpanel extends JPanel {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(new Color(82, 190, 230));
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.ITALIC, 27));
-		lblNewLabel.setBounds(852, 48, 213, 38);
+		lblNewLabel.setBounds(853, 24, 213, 38);
 		add(lblNewLabel);
 
 		table = new JTable(data, columnNames);
@@ -86,11 +86,12 @@ public class Btableconfpanel extends JPanel {
 		table.setOpaque(false);
 	
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(745, 123, 421, 531);
+		scrollPane.setBounds(751, 73, 421, 531);
 		scrollPane.getViewport().setBackground(Color.DARK_GRAY);
 		add(scrollPane);
 		
 		JButton btnNewButton = new JButton("Add");
+		btnNewButton.setFocusable(false);
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.PLAIN, 15));
 		btnNewButton.setBackground(Color.DARK_GRAY);
 		btnNewButton.setForeground(Color.WHITE);
@@ -98,6 +99,7 @@ public class Btableconfpanel extends JPanel {
 		add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Edit");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.PLAIN, 15));
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
 		btnNewButton_1.setForeground(Color.WHITE);
@@ -119,6 +121,7 @@ public class Btableconfpanel extends JPanel {
 		textField.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Table Name :");
+		lblNewLabel_2.setForeground(Color.ORANGE);
 		lblNewLabel_2.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		lblNewLabel_2.setBounds(52, 93, 88, 21);
 		add(lblNewLabel_2);
@@ -130,16 +133,19 @@ public class Btableconfpanel extends JPanel {
 		add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Old Name :");
+		lblNewLabel_4.setForeground(Color.ORANGE);
 		lblNewLabel_4.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		lblNewLabel_4.setBounds(52, 241, 75, 20);
 		add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("New Name :");
+		lblNewLabel_5.setForeground(Color.ORANGE);
 		lblNewLabel_5.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		lblNewLabel_5.setBounds(52, 279, 75, 25);
 		add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_7 = new JLabel("New Location");
+		lblNewLabel_7.setForeground(Color.ORANGE);
 		lblNewLabel_7.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		lblNewLabel_7.setBounds(52, 315, 88, 26);
 		add(lblNewLabel_7);
@@ -159,6 +165,7 @@ public class Btableconfpanel extends JPanel {
 		textField_4.setColumns(10);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Inner");
+		rdbtnNewRadioButton.setFocusable(false);
 		buttonGroup_1.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		rdbtnNewRadioButton.setBounds(148, 317, 86, 23);
@@ -167,6 +174,7 @@ public class Btableconfpanel extends JPanel {
 		add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Outer");
+		rdbtnNewRadioButton_1.setFocusable(false);
 		buttonGroup_1.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		rdbtnNewRadioButton_1.setBounds(236, 317, 109, 23);
@@ -175,11 +183,13 @@ public class Btableconfpanel extends JPanel {
 		add(rdbtnNewRadioButton_1);
 		
 		JLabel lblNewLabel_6 = new JLabel("Location");
+		lblNewLabel_6.setForeground(Color.ORANGE);
 		lblNewLabel_6.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		lblNewLabel_6.setBounds(52, 135, 64, 19);
 		add(lblNewLabel_6);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Inner");
+		rdbtnNewRadioButton_2.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		rdbtnNewRadioButton_2.setBounds(150, 133, 109, 23);
@@ -188,11 +198,20 @@ public class Btableconfpanel extends JPanel {
 		add(rdbtnNewRadioButton_2);
 		
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Outer");
+		rdbtnNewRadioButton_3.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton_3);
 		rdbtnNewRadioButton_3.setFont(new Font("Bauhaus 93", Font.PLAIN, 13));
 		rdbtnNewRadioButton_3.setBounds(279, 133, 109, 23);
 		rdbtnNewRadioButton_3.setBackground(Color.DARK_GRAY);
 		rdbtnNewRadioButton_3.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton_3);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setFocusable(false);
+		btnBack.setForeground(Color.RED);
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnBack.setBounds(853, 657, 160, 38);
+		add(btnBack);
 	}
 }

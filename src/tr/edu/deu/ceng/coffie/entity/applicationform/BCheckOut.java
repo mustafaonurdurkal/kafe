@@ -72,7 +72,7 @@ public class BCheckOut extends JPanel {
 		table.setOpaque(false);
 	
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(962, 59, 355, 584);
+		scrollPane.setBounds(915, 59, 355, 530);
 		scrollPane.getViewport().setBackground(Color.DARK_GRAY);
 		add(scrollPane);
 		
@@ -84,7 +84,7 @@ public class BCheckOut extends JPanel {
 		table2.setOpaque(false);
 	
 		JScrollPane scrollPane2 = new JScrollPane(table2);
-		scrollPane2.setBounds(364, 59, 355, 584);
+		scrollPane2.setBounds(364, 59, 355, 530);
 		scrollPane2.getViewport().setBackground(Color.DARK_GRAY);
 		add(scrollPane2);
 		
@@ -92,7 +92,7 @@ public class BCheckOut extends JPanel {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(new Color(82, 190, 230));
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.ITALIC, 27));
-		lblNewLabel.setBounds(1034, 10, 213, 38);
+		lblNewLabel.setBounds(1001, 10, 213, 38);
 		add(lblNewLabel);
 		
 		
@@ -134,6 +134,7 @@ public class BCheckOut extends JPanel {
 		
 		JButton btnNewButton = new JButton("PAY");
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
+		btnNewButton.setFocusable(false);
 		btnNewButton.setBounds(23, 239, 160, 31);
 		btnNewButton.setBackground(Color.DARK_GRAY);
 		btnNewButton.setForeground(Color.WHITE);
@@ -155,6 +156,7 @@ public class BCheckOut extends JPanel {
 		add(spinner);
 		
 		JButton btnNewButton_1 = new JButton("CheckOUT");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_1.setBounds(23, 296, 160, 38);
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
@@ -169,18 +171,28 @@ public class BCheckOut extends JPanel {
 		add(lblMenu);
 		
 		JButton btnRemoveOrder = new JButton("Remove Order");
+		btnRemoveOrder.setFocusable(false);
 		btnRemoveOrder.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
-		btnRemoveOrder.setBounds(784, 151, 133, 50);
+		btnRemoveOrder.setBounds(751, 151, 133, 50);
 		btnRemoveOrder.setBackground(Color.DARK_GRAY);
 		btnRemoveOrder.setForeground(Color.WHITE);
 		add(btnRemoveOrder);
 		
 		JButton btnAddOrder = new JButton("Add Order");
+		btnAddOrder.setFocusable(false);
 		btnAddOrder.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
-		btnAddOrder.setBounds(784, 99, 127, 41);
+		btnAddOrder.setBounds(751, 99, 133, 41);
 		btnAddOrder.setBackground(Color.DARK_GRAY);
 		btnAddOrder.setForeground(Color.WHITE);
 		add(btnAddOrder);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setForeground(Color.RED);
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setFocusable(false);
+		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnBack.setBounds(1074, 634, 160, 38);
+		add(btnBack);
 		
 	}
 }

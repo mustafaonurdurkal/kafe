@@ -179,6 +179,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_1.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Create");
+		btnNewButton.setFocusable(false);
 		btnNewButton.setBackground(Color.DARK_GRAY);
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.addActionListener(new ActionListener() {
@@ -280,6 +281,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_7.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Create");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -325,6 +327,7 @@ public class BFoodAndDrink extends JPanel {
 		textField_9.setColumns(10);
 		
 		JButton btnNewButton_2 = new JButton("Create");
+		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -342,6 +345,7 @@ public class BFoodAndDrink extends JPanel {
 		add(lblNewLabel_16);
 		
 		JButton btnNewButton_3 = new JButton("Modify");
+		btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
 		btnNewButton_3.setBounds(-6, 153, 95, 22);
 		btnNewButton_3.setBackground(Color.DARK_GRAY);
@@ -349,6 +353,7 @@ public class BFoodAndDrink extends JPanel {
 		add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Modify");
+		btnNewButton_4.setFocusable(false);
 		btnNewButton_4.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
 		btnNewButton_4.setBounds(0, 424, 89, 23);
 		btnNewButton_4.setBackground(Color.DARK_GRAY);
@@ -356,6 +361,7 @@ public class BFoodAndDrink extends JPanel {
 		add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Modify");
+		btnNewButton_5.setFocusable(false);
 		btnNewButton_5.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
 		btnNewButton_5.setBounds(224, 287, 89, 23);
 		btnNewButton_5.setBackground(Color.DARK_GRAY);
@@ -363,6 +369,7 @@ public class BFoodAndDrink extends JPanel {
 		add(btnNewButton_5);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("SingleItem");
+		rdbtnNewRadioButton.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton.setBounds(224, 42, 89, 23);
@@ -371,6 +378,7 @@ public class BFoodAndDrink extends JPanel {
 		add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("ComplexItem");
+		rdbtnNewRadioButton_1.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_1.setBounds(315, 42, 103, 23);
@@ -379,6 +387,7 @@ public class BFoodAndDrink extends JPanel {
 		add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Promoted Item");
+		rdbtnNewRadioButton_2.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_2.setBounds(224, 67, 169, 23);
@@ -387,6 +396,7 @@ public class BFoodAndDrink extends JPanel {
 		add(rdbtnNewRadioButton_2);
 		
 		JButton btnNewButton_6 = new JButton("Remove");
+		btnNewButton_6.setFocusable(false);
 		btnNewButton_6.setFont(new Font("Bauhaus 93", Font.BOLD, 15));
 		btnNewButton_6.setBounds(322, 140, 96, 23);
 		btnNewButton_6.setBackground(Color.DARK_GRAY);
@@ -448,6 +458,14 @@ public class BFoodAndDrink extends JPanel {
 		textField_13.setDisabledTextColor(Color.WHITE);
 		add(textField_13);
 		textField_13.setColumns(10);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setFocusable(false);
+		btnBack.setForeground(Color.RED);
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnBack.setBounds(853, 657, 160, 38);
+		add(btnBack);
 		
 	}
 }

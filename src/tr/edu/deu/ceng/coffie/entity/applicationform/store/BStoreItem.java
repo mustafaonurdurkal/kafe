@@ -30,6 +30,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class BStoreItem extends JPanel {
 
@@ -42,6 +43,7 @@ public class BStoreItem extends JPanel {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Create the panel.
@@ -96,6 +98,7 @@ public class BStoreItem extends JPanel {
 		add(lblNewLabel_1);
 		
 		JLabel lblItemName = new JLabel("Item Name:");
+		lblItemName.setForeground(Color.ORANGE);
 		lblItemName.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblItemName.setBounds(28, 93, 96, 22);
 		add(lblItemName);
@@ -115,16 +118,19 @@ public class BStoreItem extends JPanel {
 		add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("Item Id");
+		lblNewLabel_4.setForeground(Color.ORANGE);
 		lblNewLabel_4.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_4.setBounds(28, 243, 105, 22);
 		add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Add Amount");
+		lblNewLabel_5.setForeground(Color.ORANGE);
 		lblNewLabel_5.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_5.setBounds(28, 276, 96, 22);
 		add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Remove Amount");
+		lblNewLabel_6.setForeground(Color.ORANGE);
 		lblNewLabel_6.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_6.setBounds(28, 309, 110, 30);
 		add(lblNewLabel_6);
@@ -136,6 +142,7 @@ public class BStoreItem extends JPanel {
 		add(lblNewLabel_7);
 		
 		JLabel lblNewLabel_8 = new JLabel("Item Id");
+		lblNewLabel_8.setForeground(Color.ORANGE);
 		lblNewLabel_8.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_8.setBounds(28, 425, 86, 30);
 		add(lblNewLabel_8);
@@ -173,6 +180,7 @@ public class BStoreItem extends JPanel {
 		textField_5.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Add");
+		btnNewButton.setFocusable(false);
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton.setBounds(268, 276, 105, 23);
 		btnNewButton.setBackground(Color.DARK_GRAY);
@@ -180,6 +188,7 @@ public class BStoreItem extends JPanel {
 		add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Remove");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_1.setBounds(268, 313, 105, 23);
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
@@ -187,6 +196,7 @@ public class BStoreItem extends JPanel {
 		add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Remove");
+		btnNewButton_2.setFocusable(false);
 	
 		btnNewButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_2.setBounds(284, 429, 89, 23);
@@ -195,6 +205,7 @@ public class BStoreItem extends JPanel {
 		add(btnNewButton_2);
 		
 		JLabel lblNewLabel_9 = new JLabel("Price :");
+		lblNewLabel_9.setForeground(Color.ORANGE);
 		lblNewLabel_9.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblNewLabel_9.setBounds(28, 162, 115, 22);
 		add(lblNewLabel_9);
@@ -208,6 +219,7 @@ public class BStoreItem extends JPanel {
 		textField_6.setColumns(10);
 		
 		JLabel lblChangePrice = new JLabel("Change Price");
+		lblChangePrice.setForeground(Color.ORANGE);
 		lblChangePrice.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		lblChangePrice.setBounds(28, 350, 115, 22);
 		add(lblChangePrice);
@@ -221,6 +233,7 @@ public class BStoreItem extends JPanel {
 		textField_7.setColumns(10);
 		
 		JButton btnNewButton_3 = new JButton("Change");
+		btnNewButton_3.setFocusable(false);
 		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_3.setBounds(268, 351, 105, 21);
 		btnNewButton_3.setBackground(Color.DARK_GRAY);
@@ -228,18 +241,35 @@ public class BStoreItem extends JPanel {
 		add(btnNewButton_3);
 		
 		JButton button = new JButton("Add");
+		button.setFocusable(false);
 		button.setForeground(Color.WHITE);
 		button.setFont(new Font("Dialog", Font.ITALIC, 15));
 		button.setBackground(Color.DARK_GRAY);
 		button.setBounds(268, 92, 105, 23);
 		add(button);
 		
+		JButton btnBack = new JButton("Back");
+		btnBack.setFocusable(false);
+		btnBack.setForeground(Color.RED);
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnBack.setBounds(853, 657, 160, 38);
+		add(btnBack);
+		
 		JRadioButton rdbtnCountable = new JRadioButton("Countable");
-		rdbtnCountable.setBounds(274, 131, 149, 23);
+		buttonGroup.add(rdbtnCountable);
+		rdbtnCountable.setBackground(Color.DARK_GRAY);
+		rdbtnCountable.setForeground(Color.WHITE);
+		rdbtnCountable.setFocusable(false);
+		rdbtnCountable.setBounds(260, 133, 105, 22);
 		add(rdbtnCountable);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Froze On Ready");
-		rdbtnNewRadioButton.setBounds(130, 131, 149, 23);
+		buttonGroup.add(rdbtnNewRadioButton);
+		rdbtnNewRadioButton.setFocusable(false);
+		rdbtnNewRadioButton.setBounds(153, 134, 105, 20);
+		rdbtnNewRadioButton.setBackground(Color.DARK_GRAY);
+		rdbtnNewRadioButton.setForeground(Color.WHITE);
 		add(rdbtnNewRadioButton);
 		
 		java.util.List<Item> items = Memory.getMemory().getItems();

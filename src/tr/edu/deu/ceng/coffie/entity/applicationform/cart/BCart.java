@@ -238,6 +238,7 @@ public class BCart extends JPanel {
 		add(spinner_2);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Regular");
+		rdbtnNewRadioButton.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton.setBounds(6, 251, 79, 23);
@@ -246,6 +247,7 @@ public class BCart extends JPanel {
 		add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Student");
+		rdbtnNewRadioButton_1.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_1.setBounds(87, 251, 75, 23);
@@ -254,6 +256,7 @@ public class BCart extends JPanel {
 		add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Premium");
+		rdbtnNewRadioButton_2.setFocusable(false);
 		buttonGroup.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_2.setBounds(164, 251, 85, 23);
@@ -262,6 +265,7 @@ public class BCart extends JPanel {
 		add(rdbtnNewRadioButton_2);
 		
 		JButton btnNewButton = new JButton("Create Customer");
+		btnNewButton.setFocusable(false);
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton.setBounds(10, 293, 152, 23);
 		btnNewButton.setBackground(Color.DARK_GRAY);
@@ -301,6 +305,7 @@ public class BCart extends JPanel {
 		add(lblNewLabel_12);
 		
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Regular");
+		rdbtnNewRadioButton_3.setFocusable(false);
 		rdbtnNewRadioButton_3.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_3.setBounds(268, 91, 88, 23);
 		rdbtnNewRadioButton_3.setBackground(Color.DARK_GRAY);
@@ -308,6 +313,7 @@ public class BCart extends JPanel {
 		add(rdbtnNewRadioButton_3);
 		
 		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Student");
+		rdbtnNewRadioButton_4.setFocusable(false);
 		rdbtnNewRadioButton_4.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_4.setBounds(358, 91, 75, 23);
 		rdbtnNewRadioButton_4.setBackground(Color.DARK_GRAY);
@@ -315,6 +321,7 @@ public class BCart extends JPanel {
 		add(rdbtnNewRadioButton_4);
 		
 		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Premium");
+		rdbtnNewRadioButton_5.setFocusable(false);
 		rdbtnNewRadioButton_5.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_5.setBounds(441, 91, 75, 23);
 		rdbtnNewRadioButton_5.setBackground(Color.DARK_GRAY);
@@ -330,6 +337,7 @@ public class BCart extends JPanel {
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Create Card");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnNewButton_1.setBounds(268, 145, 122, 23);
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
@@ -350,6 +358,7 @@ public class BCart extends JPanel {
 		add(lblTl);
 		
 		JButton btnNewButton_2 = new JButton("Add");
+		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnNewButton_2.setBounds(268, 261, 122, 23);
 		btnNewButton_2.setBackground(Color.DARK_GRAY);
@@ -378,6 +387,7 @@ public class BCart extends JPanel {
 		textField_5.setColumns(10);
 		
 		JButton btnRemove = new JButton("Remove");
+		btnRemove.setFocusable(false);
 		btnRemove.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
 		btnRemove.setBounds(10, 393, 89, 23);
 		btnRemove.setBackground(Color.DARK_GRAY);
@@ -404,8 +414,16 @@ public class BCart extends JPanel {
 		textField_6.setDisabledTextColor(Color.WHITE);
 		add(textField_6);
 		textField_6.setColumns(10);
+		JButton btnBack = new JButton("Back");
+		btnBack.setFocusable(false);
+		btnBack.setForeground(Color.RED);
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnBack.setBounds(871, 624, 160, 38);
+		add(btnBack);
 		
 		JButton btnRemoveCard = new JButton("Remove Card");
+		btnRemoveCard.setFocusable(false);
 		btnRemoveCard.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		btnRemoveCard.setBounds(268, 394, 122, 23);
 		btnRemoveCard.setBackground(Color.DARK_GRAY);

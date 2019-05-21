@@ -88,17 +88,15 @@ public class BDEFTERLER extends JPanel {
 		
 		
 		JButton btnNewButton = new JButton("ADD");
+		btnNewButton.setFocusable(false);
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
 		btnNewButton.setBackground(Color.DARK_GRAY);
 		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnNewButton.setBounds(399, 184, 97, 29);
 		add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("MODIFY");
+		btnNewButton_1.setFocusable(false);
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
 		btnNewButton_1.setForeground(Color.WHITE);
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.BOLD, 13));
@@ -172,6 +170,7 @@ public class BDEFTERLER extends JPanel {
 		add(lblNewLabel_7);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("FOOD");
+		rdbtnNewRadioButton.setFocusable(false);
 		rdbtnNewRadioButton.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setBounds(179, 165, 65, 23);
@@ -180,6 +179,7 @@ public class BDEFTERLER extends JPanel {
 		add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("DRINK");
+		rdbtnNewRadioButton_1.setFocusable(false);
 		rdbtnNewRadioButton_1.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		buttonGroup.add(rdbtnNewRadioButton_1);
 		rdbtnNewRadioButton_1.setBounds(262, 165, 77, 23);
@@ -188,6 +188,7 @@ public class BDEFTERLER extends JPanel {
 		add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("FOOD");
+		rdbtnNewRadioButton_2.setFocusable(false);
 		buttonGroup_1.add(rdbtnNewRadioButton_2);
 		rdbtnNewRadioButton_2.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_2.setBounds(174, 350, 70, 23);
@@ -196,6 +197,7 @@ public class BDEFTERLER extends JPanel {
 		add(rdbtnNewRadioButton_2);
 		
 		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("DRINK");
+		rdbtnNewRadioButton_3.setFocusable(false);
 		buttonGroup_1.add(rdbtnNewRadioButton_3);
 		rdbtnNewRadioButton_3.setFont(new Font("Bauhaus 93", Font.ITALIC, 13));
 		rdbtnNewRadioButton_3.setBounds(262, 350, 77, 23);
@@ -224,6 +226,7 @@ public class BDEFTERLER extends JPanel {
 		textField_1.setColumns(10);
 		
 		JButton btnNewButton_2 = new JButton("L&M");
+		btnNewButton_2.setFocusable(false);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -233,5 +236,13 @@ public class BDEFTERLER extends JPanel {
 		btnNewButton_2.setBackground(Color.DARK_GRAY);
 		btnNewButton_2.setForeground(Color.WHITE);
 		add(btnNewButton_2);
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.setFocusable(false);
+		btnBack.setForeground(Color.RED);
+		btnBack.setBackground(Color.DARK_GRAY);
+		btnBack.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnBack.setBounds(853, 657, 160, 38);
+		add(btnBack);
 	}
 }

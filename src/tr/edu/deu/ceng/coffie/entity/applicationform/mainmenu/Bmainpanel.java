@@ -43,6 +43,7 @@ public class Bmainpanel extends JPanel {
 	private JPanel panel_2;
 	private JPanel panel_3;
 	private JFrame parent;
+	private JLabel lblUserName;
 	public Bmainpanel(String fileName,JFrame parent) throws IOException {
 	    backgroundImage = ImageIO.read(new File(fileName));
 	    this.parent = parent;
@@ -68,7 +69,7 @@ public class Bmainpanel extends JPanel {
 		setBackground(Color.WHITE);
 		panel_1 = new JPanel();
 		panel_1.setBackground(new Color(150,150,150,100));
-		panel_1.setBounds(77, 11, 1089, 57);
+		panel_1.setBounds(77, 37, 1089, 57);
 		add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -84,7 +85,7 @@ public class Bmainpanel extends JPanel {
 		btnNewButton.setForeground(new Color(82, 190, 230));
 		btnNewButton.setBackground(new Color(0,0,0));
 		btnNewButton.setFont(new Font("Bauhaus 93", Font.PLAIN, 25));
-		btnNewButton.setBounds(58, 0, 197, 57);
+		btnNewButton.setBounds(10, 0, 197, 57);
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("CARDS&CUSTOMER");
@@ -102,7 +103,7 @@ public class Bmainpanel extends JPanel {
 		btnNewButton_1.setForeground(new Color(82, 190, 230));
 		btnNewButton_1.setBackground(new Color(0,0,0));
 		btnNewButton_1.setFont(new Font("Bauhaus 93", Font.PLAIN, 22));
-		btnNewButton_1.setBounds(310, 1, 195, 57);
+		btnNewButton_1.setBounds(231, 1, 195, 57);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_3 = new JButton("MENU CONFIGURATION");
@@ -118,7 +119,7 @@ public class Bmainpanel extends JPanel {
 		btnNewButton_3.setForeground(new Color(82, 190, 230));
 		btnNewButton_3.setBackground(new Color(0,0,0));
 		btnNewButton_3.setFont(new Font("Bauhaus 93", Font.PLAIN, 20));
-		btnNewButton_3.setBounds(581, 2, 207, 57);
+		btnNewButton_3.setBounds(449, 0, 207, 57);
 		panel_1.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("Table Configuration");
@@ -133,8 +134,17 @@ public class Bmainpanel extends JPanel {
 		btnNewButton_4.setForeground(new Color(82, 190, 230));
 		btnNewButton_4.setBackground(new Color(0,0,0));
 		btnNewButton_4.setFont(new Font("Bauhaus 93", Font.PLAIN, 20));
-		btnNewButton_4.setBounds(866, 0, 192, 57);
+		btnNewButton_4.setBounds(680, 0, 192, 57);
 		panel_1.add(btnNewButton_4);
+		
+		JButton btnLogout = new JButton("Logout");
+		btnLogout.setFocusable(false);
+		btnLogout.setBorder(null);
+		btnLogout.setFont(new Font("Bauhaus 93", Font.ITALIC, 24));
+		btnLogout.setBounds(898, 0, 181, 57);
+		btnLogout.setForeground(Color.RED);
+		btnLogout.setBackground(new Color(0,0,0));
+		panel_1.add(btnLogout);
 		
 		panel_2 = new JPanel();
 		GridLayout grid1 = new GridLayout(0,3);
@@ -179,6 +189,14 @@ public class Bmainpanel extends JPanel {
 		}
 		add(scrollPane2);
 		add(scrollPane1);
+		
+		lblUserName = new JLabel("USER NAME");
+		lblUserName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUserName.setBounds(975, 0, 179, 33);
+		add(lblUserName);
+		lblUserName.setFont(new Font("Bauhaus 93", Font.ITALIC, 15));
+		lblUserName.setForeground(Color.ORANGE);
+		lblUserName.setBackground(new Color(0,0,0));
 		
 		
 	}
