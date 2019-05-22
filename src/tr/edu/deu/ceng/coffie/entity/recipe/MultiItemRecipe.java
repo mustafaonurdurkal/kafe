@@ -2,6 +2,7 @@ package tr.edu.deu.ceng.coffie.entity.recipe;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import tr.edu.deu.ceng.coffie.entity.item.Item;
@@ -45,6 +46,12 @@ public class MultiItemRecipe implements Recipe{
 		this.amount = amount;
 	}
 	public BigDecimal getCost() {
+		BigDecimal cost = BigDecimal.ZERO;
+		for (int i = 0; i < items.size(); i++) {
+			Item it = items.get(i);
+			Double amount =this.amount.get(i);
+			cost.add(BigDecimal.valueOf(it.getPrice().doubleValue()*amount));
+		}
 		return cost;
 	}
 	@Override

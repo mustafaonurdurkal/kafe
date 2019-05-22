@@ -149,6 +149,14 @@ public class Bmainpanel extends JPanel {
 		btnLogout.setBackground(new Color(0,0,0));
 		panel_1.add(btnLogout);
 		
+		btnLogout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		
 		panel_2 = new JPanel();
 		GridLayout grid1 = new GridLayout(0,3);
 		panel_2.setLayout(grid1);

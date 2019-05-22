@@ -449,7 +449,7 @@ public class BRecipe extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (recipe == null) {
-					recipe = new SingleItemRecipe();
+					recipe = new MultiItemRecipe();
 				}
 				if (recipe instanceof SingleItemRecipe) {
 					if (dtm.getRowCount() == 1) {
@@ -512,6 +512,7 @@ public class BRecipe extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				recipe.setId(Memory.getMemory().getRecipes().size());
 				recipe.setName(textField.getText());
 				recipe.setDetail(textArea.getText());
 				Memory.getMemory().getRecipes().add(recipe);
